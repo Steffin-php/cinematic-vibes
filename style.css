@@ -2,108 +2,92 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Segoe UI', sans-serif;
 }
 
 body {
-  min-height: 100vh;
-  background-size: cover;
-  background-position: center;
-  transition: background-image 1s ease;
-  color: white;
+  height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  background: url("assets/bg.jpg") center/cover no-repeat fixed;
+  color: #fff;
+  overflow: hidden;
 }
 
 .overlay {
-  position: fixed;
+  position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.75);
-  z-index: -1;
+  background: rgba(0,0,0,0.65);
+  backdrop-filter: blur(4px);
 }
 
-.app {
-  min-height: 100vh;
-  padding: 40px 20px;
+.container {
+  position: relative;
+  z-index: 2;
+  height: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   text-align: center;
+  padding: 20px;
 }
 
 h1 {
+  font-family: 'Playfair Display', serif;
   font-size: 3rem;
   margin-bottom: 10px;
 }
 
-.subtitle {
-  color: #ccc;
+.tagline {
+  opacity: 0.8;
   margin-bottom: 30px;
 }
 
-.categories {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
+.quote-box {
+  max-width: 800px;
   margin-bottom: 30px;
+  animation: fadeIn 1s ease;
 }
 
-button {
-  padding: 10px 22px;
-  border: none;
+#quote {
+  font-size: 1.5rem;
+  line-height: 1.6;
+  font-family: 'Playfair Display', serif;
+}
+
+#author {
+  display: block;
+  margin-top: 15px;
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
+.buttons button,
+.actions button {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.4);
+  color: #fff;
+  padding: 10px 18px;
+  margin: 6px;
   border-radius: 25px;
-  background: #ff9800;
   cursor: pointer;
   transition: 0.3s;
 }
 
-button:hover {
-  background: white;
+.buttons button:hover,
+.actions button:hover {
+  background: #ffffff;
+  color: #000;
   transform: scale(1.05);
 }
 
-.quote-card {
-  max-width: 700px;
-  background: rgba(255,255,255,0.08);
-  border-left: 4px solid #ff9800;
-  padding: 30px;
-  margin-bottom: 20px;
-  animation: fade 0.5s ease;
-}
-
-#quoteText {
-  font-size: 1.4rem;
-  line-height: 1.6;
-}
-
-#movieName {
-  display: block;
-  margin-top: 12px;
-  color: #ffcc80;
-}
-
-.actions {
-  display: flex;
-  gap: 15px;
-  margin-bottom: 20px;
-}
-
-.daily {
-  font-size: 0.9rem;
-  color: #aaa;
-}
-
 footer {
-  text-align: center;
-  padding: 15px;
-  background: rgba(0,0,0,0.6);
-  font-size: 0.85rem;
+  position: absolute;
+  bottom: 15px;
+  font-size: 0.8rem;
+  opacity: 0.7;
 }
 
-@keyframes fade {
-  from { opacity: 0; transform: translateY(15px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@media (max-width: 600px) {
-  h1 { font-size: 2.2rem; }
-  #quoteText { font-size: 1.2rem; }
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(10px);}
+  to {opacity: 1; transform: translateY(0);}
 }
