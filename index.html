@@ -10,35 +10,33 @@
 
   <div class="overlay"></div>
 
-  <!-- HERO -->
-  <section class="hero">
+  <main class="app">
     <h1>🎬 Cinematic Vibes</h1>
-    <p class="tagline">Every frame tells a story</p>
+    <p class="subtitle">Quotes that feel like a movie scene</p>
 
-    <div class="buttons">
-      <button onclick="setCategory('action')">Action</button>
-      <button onclick="setCategory('motivation')">Motivation</button>
-      <button onclick="setCategory('life')">Life</button>
+    <div class="categories">
+      <button onclick="setCategory('motivation')">💪 Motivation</button>
+      <button onclick="setCategory('batman')">🦇 Batman</button>
+      <button onclick="setCategory('love')">❤️ Love</button>
+      <button onclick="setCategory('villain')">😈 Villains</button>
     </div>
 
     <div class="quote-card">
-      <p class="quote-text">"Why so serious?"</p>
-      <span class="movie-name">— The Dark Knight</span>
+      <p id="quoteText">Loading quote...</p>
+      <span id="movieName"></span>
     </div>
 
-    <button class="next-btn" onclick="nextQuote()">Next Quote</button>
-  </section>
+    <div class="actions">
+      <button onclick="nextQuote()">Next Quote</button>
+      <button onclick="copyQuote()">📋 Copy</button>
+    </div>
 
-  <!-- ABOUT -->
-  <section class="about">
-    <h2>About This Project</h2>
-    <p>
-      Cinematic Vibes is a movie quote website built using
-      <strong>HTML, CSS, and JavaScript</strong> and deployed using
-      <strong>GitHub Pages</strong>.  
-      This project focuses on clean UI, animations, and user interaction.
-    </p>
-  </section>
+    <p class="daily">🎬 Quote of the Day</p>
+  </main>
+
+  <footer>
+    Built with ❤️ by Steffin · Movie quotes for inspiration
+  </footer>
 
   <script src="script.js"></script>
 </body>
