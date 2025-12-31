@@ -2,41 +2,44 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Cinematic Vibes</title>
+  <title>Cinematic Vibes 🎬</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <div class="overlay"></div>
 
-  <main class="app">
-    <h1>🎬 Cinematic Vibes</h1>
-    <p class="subtitle">Quotes that feel like a movie scene</p>
+  <div class="container">
+    <h1>Cinematic Vibes 🎬</h1>
+    <p class="tagline">Movie quotes that hit your soul</p>
 
-    <div class="categories">
-      <button onclick="setCategory('motivation')">💪 Motivation</button>
-      <button onclick="setCategory('batman')">🦇 Batman</button>
-      <button onclick="setCategory('love')">❤️ Love</button>
-      <button onclick="setCategory('villain')">😈 Villains</button>
+    <div class="quote-box">
+      <p id="quote">Loading quote...</p>
+      <span id="author"></span>
     </div>
 
-    <div class="quote-card">
-      <p id="quoteText">Loading quote...</p>
-      <span id="movieName"></span>
+    <div class="buttons">
+      <button onclick="getQuote('motivation')">💪 Motivation</button>
+      <button onclick="getQuote('batman')">🦇 Batman</button>
+      <button onclick="getQuote('love')">❤️ Love</button>
+      <button onclick="getQuote('villain')">😈 Villain</button>
     </div>
 
     <div class="actions">
-      <button onclick="nextQuote()">Next Quote</button>
       <button onclick="copyQuote()">📋 Copy</button>
+      <button onclick="shareQuote()">📤 Share</button>
     </div>
 
-    <p class="daily">🎬 Quote of the Day</p>
-  </main>
-
-  <footer>
-    Built with ❤️ by Steffin · Movie quotes for inspiration
-  </footer>
+    <footer>
+      <p>Built with ❤️ by Steffin</p>
+      <p>Quotes for inspiration & cinematic vibes</p>
+    </footer>
+  </div>
 
   <script src="script.js"></script>
 </body>
