@@ -1,38 +1,44 @@
+const body = document.body;
+
+const backgrounds = {
+  motivation: "assets/shawshank.jpg",
+  hero: "assets/batman.jpg",
+  love: "assets/notebook.jpg",
+  villain: "assets/joker.jpg"
+};
+
 const quotes = {
   motivation: [
-    { text: "Why do we fall? So we can learn to pick ourselves up.", author: "Batman Begins" },
-    { text: "Great men are not born great, they grow great.", author: "The Godfather" },
-    { text: "You either die a hero or live long enough to see yourself become the villain.", author: "The Dark Knight" },
-    { text: "Hope is a good thing, maybe the best of things.", author: "The Shawshank Redemption" }
+    { text: "Hope is a good thing, maybe the best of things.", author: "The Shawshank Redemption" },
+    { text: "Get busy living, or get busy dying.", author: "The Shawshank Redemption" },
+    { text: "Remember Red, hope is a good thing.", author: "Andy Dufresne" }
   ],
 
-  batman: [
+  hero: [
     { text: "It's not who I am underneath, but what I do that defines me.", author: "Batman Begins" },
-    { text: "Sometimes the truth isn't good enough.", author: "The Dark Knight" },
+    { text: "Why do we fall? So we can learn to pick ourselves up.", author: "Batman Begins" },
     { text: "A hero can be anyone.", author: "The Dark Knight Rises" }
   ],
 
   love: [
-    { text: "You had me at hello.", author: "Jerry Maguire" },
-    { text: "Love is putting someone else's needs before yours.", author: "Frozen" },
-    { text: "The greatest thing you'll ever learn is just to love and be loved.", author: "Moulin Rouge" }
+    { text: "The best love is the kind that awakens the soul.", author: "The Notebook" },
+    { text: "It wasn't over. It still isn't over.", author: "The Notebook" },
+    { text: "Love is passion, obsession, someone you can't live without.", author: "The Notebook" }
   ],
 
   villain: [
-    { text: "Madness, as you know, is like gravity.", author: "The Joker" },
-    { text: "Do you wanna know how I got these scars?", author: "The Dark Knight" },
+    { text: "Madness is like gravity. All it takes is a little push.", author: "The Joker" },
+    { text: "Introduce a little anarchy.", author: "The Dark Knight" },
     { text: "If you're good at something, never do it for free.", author: "The Joker" }
   ]
 };
 
-// Quote of the Day
-const today = new Date().getDate();
-const dailyQuotes = Object.values(quotes).flat();
-const daily = dailyQuotes[today % dailyQuotes.length];
-setQuote(daily);
+// Load Quote of the Day (motivation default)
+setBackground("motivation");
+setQuote(quotes.motivation[0]);
 
-// Functions
 function getQuote(category) {
+  setBackground(category);
   const list = quotes[category];
   const random = list[Math.floor(Math.random() * list.length)];
   setQuote(random);
@@ -50,9 +56,12 @@ function setQuote(quote) {
   quoteEl.parentElement.style.animation = "fadeIn 1s ease";
 }
 
+function setBackground(category) {
+  body.style.backgroundImage = `url(${backgrounds[category]})`;
+}
+
 function copyQuote() {
-  const text = document.getElementById("quote").innerText;
-  navigator.clipboard.writeText(text);
+  navigator.clipboard.writeText(document.getElementById("quote").innerText);
   alert("Quote copied!");
 }
 
@@ -61,6 +70,6 @@ function shareQuote() {
   if (navigator.share) {
     navigator.share({ text });
   } else {
-    alert("Sharing not supported on this browser");
+    alert("Sharing not supported");
   }
 }
