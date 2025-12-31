@@ -7,127 +7,103 @@
 
 body {
   min-height: 100vh;
-  color: white;
   background-size: cover;
   background-position: center;
-  transition: background-image 1s ease-in-out;
+  transition: background-image 1s ease;
+  color: white;
 }
 
-/* Overlay */
 .overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0,0,0,0.75);
   z-index: -1;
 }
 
-/* HERO */
-.hero {
+.app {
   min-height: 100vh;
   padding: 40px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   text-align: center;
 }
 
-.hero h1 {
+h1 {
   font-size: 3rem;
-  letter-spacing: 2px;
+  margin-bottom: 10px;
 }
 
-.tagline {
-  margin: 10px 0 30px;
+.subtitle {
   color: #ccc;
-  font-style: italic;
-}
-
-/* Buttons */
-.buttons {
-  display: flex;
-  gap: 15px;
   margin-bottom: 30px;
-  flex-wrap: wrap;
 }
 
-.buttons button,
-.next-btn {
+.categories {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+button {
   padding: 10px 22px;
   border: none;
   border-radius: 25px;
   background: #ff9800;
-  color: black;
   cursor: pointer;
   transition: 0.3s;
 }
 
-.buttons button:hover,
-.next-btn:hover {
+button:hover {
   background: white;
   transform: scale(1.05);
 }
 
-/* Quote Card */
 .quote-card {
   max-width: 700px;
-  background: rgba(255, 255, 255, 0.08);
-  border-left: 5px solid #ff9800;
+  background: rgba(255,255,255,0.08);
+  border-left: 4px solid #ff9800;
   padding: 30px;
-  margin-bottom: 25px;
-  animation: fadeUp 0.6s ease;
+  margin-bottom: 20px;
+  animation: fade 0.5s ease;
 }
 
-.quote-text {
+#quoteText {
   font-size: 1.4rem;
   line-height: 1.6;
 }
 
-.movie-name {
+#movieName {
   display: block;
-  margin-top: 15px;
+  margin-top: 12px;
   color: #ffcc80;
 }
 
-/* ABOUT */
-.about {
-  padding: 60px 20px;
-  background: rgba(0, 0, 0, 0.85);
+.actions {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.daily {
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+footer {
   text-align: center;
+  padding: 15px;
+  background: rgba(0,0,0,0.6);
+  font-size: 0.85rem;
 }
 
-.about h2 {
-  font-size: 2rem;
-  margin-bottom: 15px;
+@keyframes fade {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-.about p {
-  max-width: 800px;
-  margin: auto;
-  line-height: 1.6;
-  color: #ccc;
-}
-
-/* Animation */
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Mobile */
 @media (max-width: 600px) {
-  .hero h1 {
-    font-size: 2.2rem;
-  }
-  .quote-text {
-    font-size: 1.2rem;
-  }
+  h1 { font-size: 2.2rem; }
+  #quoteText { font-size: 1.2rem; }
 }
-
-
