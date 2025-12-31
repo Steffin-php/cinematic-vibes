@@ -3,27 +3,43 @@
 <head>
   <meta charset="UTF-8">
   <title>Cinematic Vibes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <div class="overlay"></div>
 
-  <div class="container">
-    <h1>Cinematic Vibes 🎬</h1>
+  <!-- HERO -->
+  <section class="hero">
+    <h1>🎬 Cinematic Vibes</h1>
     <p class="tagline">Every frame tells a story</p>
 
-    <div class="quote-box">
-      <p class="quote">
-        "Why so serious? — The Dark Knight"
-      </p>
+    <div class="buttons">
+      <button onclick="setCategory('action')">Action</button>
+      <button onclick="setCategory('motivation')">Motivation</button>
+      <button onclick="setCategory('life')">Life</button>
     </div>
 
-    <button id="changeQuote">Next Quote</button>
-  </div>
+    <div class="quote-card">
+      <p class="quote-text">"Why so serious?"</p>
+      <span class="movie-name">— The Dark Knight</span>
+    </div>
+
+    <button class="next-btn" onclick="nextQuote()">Next Quote</button>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about">
+    <h2>About This Project</h2>
+    <p>
+      Cinematic Vibes is a movie quote website built using
+      <strong>HTML, CSS, and JavaScript</strong> and deployed using
+      <strong>GitHub Pages</strong>.  
+      This project focuses on clean UI, animations, and user interaction.
+    </p>
+  </section>
 
   <script src="script.js"></script>
 </body>
 </html>
-
-
