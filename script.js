@@ -1,65 +1,66 @@
-const backgrounds = {
-  motivation: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee",
-  batman: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d",
-  love: "https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d",
-  villain: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba"
-};
-
 const quotes = {
   motivation: [
-    ["Hope is a good thing.", "Shawshank Redemption"],
-    ["Dreams feel real while we're in them.", "Inception"],
-    ["Get busy living.", "Shawshank Redemption"],
-    ["Great men grow great.", "The Godfather"]
+    { text: "Why do we fall? So we can learn to pick ourselves up.", author: "Batman Begins" },
+    { text: "Great men are not born great, they grow great.", author: "The Godfather" },
+    { text: "You either die a hero or live long enough to see yourself become the villain.", author: "The Dark Knight" },
+    { text: "Hope is a good thing, maybe the best of things.", author: "The Shawshank Redemption" }
   ],
+
   batman: [
-    ["Why so serious?", "The Dark Knight"],
-    ["I am Batman.", "Batman"],
-    ["You either die a hero...", "The Dark Knight"],
-    ["It's not who I am underneath.", "Batman Begins"]
+    { text: "It's not who I am underneath, but what I do that defines me.", author: "Batman Begins" },
+    { text: "Sometimes the truth isn't good enough.", author: "The Dark Knight" },
+    { text: "A hero can be anyone.", author: "The Dark Knight Rises" }
   ],
+
   love: [
-    ["You complete me.", "Jerry Maguire"],
-    ["Love means never having to say sorry.", "Love Story"],
-    ["I wish I knew how to quit you.", "Brokeback Mountain"],
-    ["It was always you.", "The Notebook"]
+    { text: "You had me at hello.", author: "Jerry Maguire" },
+    { text: "Love is putting someone else's needs before yours.", author: "Frozen" },
+    { text: "The greatest thing you'll ever learn is just to love and be loved.", author: "Moulin Rouge" }
   ],
+
   villain: [
-    ["I am inevitable.", "Avengers"],
-    ["Introduce a little anarchy.", "The Dark Knight"],
-    ["Say hello to my little friend.", "Scarface"],
-    ["Chaos is fair.", "The Dark Knight"]
+    { text: "Madness, as you know, is like gravity.", author: "The Joker" },
+    { text: "Do you wanna know how I got these scars?", author: "The Dark Knight" },
+    { text: "If you're good at something, never do it for free.", author: "The Joker" }
   ]
 };
 
-let currentCategory = "motivation";
+// Quote of the Day
+const today = new Date().getDate();
+const dailyQuotes = Object.values(quotes).flat();
+const daily = dailyQuotes[today % dailyQuotes.length];
+setQuote(daily);
 
-const quoteText = document.getElementById("quoteText");
-const movieName = document.getElementById("movieName");
-
-function nextQuote() {
-  const list = quotes[currentCategory];
+// Functions
+function getQuote(category) {
+  const list = quotes[category];
   const random = list[Math.floor(Math.random() * list.length)];
-
-  quoteText.textContent = `"${random[0]}"`;
-  movieName.textContent = `— ${random[1]}`;
+  setQuote(random);
 }
 
-function setCategory(cat) {
-  currentCategory = cat;
-  document.body.style.backgroundImage = `url(${backgrounds[cat]})`;
-  nextQuote();
+function setQuote(quote) {
+  const quoteEl = document.getElementById("quote");
+  const authorEl = document.getElementById("author");
+
+  quoteEl.textContent = `"${quote.text}"`;
+  authorEl.textContent = `— ${quote.author}`;
+
+  quoteEl.parentElement.style.animation = "none";
+  void quoteEl.parentElement.offsetWidth;
+  quoteEl.parentElement.style.animation = "fadeIn 1s ease";
 }
 
 function copyQuote() {
-  const text = quoteText.textContent + " " + movieName.textContent;
+  const text = document.getElementById("quote").innerText;
   navigator.clipboard.writeText(text);
   alert("Quote copied!");
 }
 
-// Quote of the day
-const dayIndex = new Date().getDate() % quotes.motivation.length;
-quoteText.textContent = `"${quotes.motivation[dayIndex][0]}"`;
-movieName.textContent = `— ${quotes.motivation[dayIndex][1]}`;
-document.body.style.backgroundImage = `url(${backgrounds.motivation})`;
-
+function shareQuote() {
+  const text = document.getElementById("quote").innerText;
+  if (navigator.share) {
+    navigator.share({ text });
+  } else {
+    alert("Sharing not supported on this browser");
+  }
+}
