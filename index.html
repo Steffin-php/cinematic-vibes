@@ -4,25 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cinematic Vibes | Quotes</title>
-    <!-- Google Fonts for a cinematic look -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
-<body>
+<body id="body-bg">
+    <div class="overlay"></div>
 
-    <!-- Dark overlay to make text readable -->
-    <div class="background-overlay"></div>
+    <nav class="category-nav">
+        <button class="nav-btn active" onclick="setCategory('love')">Love</button>
+        <button class="nav-btn" onclick="setCategory('hero')">Hero</button>
+        <button class="nav-btn" onclick="setCategory('villain')">Villain</button>
+        <button class="nav-btn" onclick="setCategory('motivation')">Motivation</button>
+    </nav>
 
     <div class="container">
-        <div class="quote-box">
-            <span class="quote-icon">“</span>
-            <p id="quote-text">Loading the magic...</p>
-            <p id="movie-name">- Movie Name</p>
+        <div class="quote-card" id="capture">
+            <i class="fa-solid fa-quote-left quote-icon"></i>
+            <h1 id="quote-text">"Loading the vibe..."</h1>
+            <p id="movie-title">- Movie Name</p>
             
-            <div class="button-group">
-                <button id="next-btn">Next Scene</button>
+            <div class="action-buttons">
+                <button onclick="copyQuote()" title="Copy Text"><i class="fa-regular fa-copy"></i></button>
+                <button onclick="saveQuote()" title="Download Text"><i class="fa-regular fa-floppy-disk"></i></button>
+                <button onclick="shareQuote()" title="Share"><i class="fa-solid fa-share-nodes"></i></button>
             </div>
         </div>
+        
+        <button id="next-btn" onclick="nextQuote()">Next Quote <i class="fa-solid fa-arrow-right"></i></button>
     </div>
 
     <script src="script.js"></script>
