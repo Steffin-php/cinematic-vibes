@@ -3,95 +3,55 @@ let index = 0;
 
 const quotes = {
   motivation: [
-    ["Hope is a good thing, maybe the best of things.", "Shawshank Redemption"],
+    ["The world ain’t all sunshine and rainbows.", "Rocky Balboa"],
+    ["I could have been a contender.", "Raging Bull"],
+    ["Greatness is not born, it is made.", "Creed"],
     ["Get busy living, or get busy dying.", "Shawshank Redemption"],
     ["Carpe diem. Seize the day.", "Dead Poets Society"],
-    ["Great men are not born great, they grow great.", "The Godfather"],
-    ["Why do we fall? So we can learn to pick ourselves up.", "Batman Begins"],
-    ["Do what you love.", "La La Land"],
-    ["Your future is whatever you make it.", "Back to the Future"],
-    ["Never tell me the odds.", "Star Wars"],
-    ["Believe you can.", "Rocky"],
-    ["It ain’t about how hard you hit.", "Rocky Balboa"],
-    ["We become what we choose.", "Spider-Man"],
-    ["Every man dies, not every man lives.", "Braveheart"],
-    ["You control your destiny.", "Kung Fu Panda"],
-    ["Dreams feel real while we're in them.", "Inception"],
-    ["You are your choices.", "The Dark Knight"],
-    ["Stay gold.", "The Outsiders"],
+    ["Every champion was once a contender.", "Rocky"],
     ["Don’t let fear stop you.", "After Earth"],
-    ["Rise.", "The Dark Knight Rises"],
-    ["It’s not who I am underneath.", "Batman Begins"],
-    ["Make each day count.", "Titanic"]
+    ["We rise by lifting ourselves.", "Raging Bull"],
+    ["Dreams feel real while we're in them.", "Inception"],
+    ["It’s not about how hard you hit.", "Rocky Balboa"]
   ],
 
   hero: [
-    ["I’m Batman.", "The Dark Knight"],
-    ["With great power comes great responsibility.", "Spider-Man"],
-    ["I can do this all day.", "Captain America"],
-    ["Why do we fall?", "Batman Begins"],
-    ["Hope is like the sun.", "Wonder Woman"],
-    ["Heroes are made by the path they choose.", "Thor"],
+    ["You’ll believe a man can fly.", "Superman"],
+    ["Hope is the light.", "Man of Steel"],
+    ["I stand for truth.", "Superman Returns"],
     ["A hero can be anyone.", "The Dark Knight Rises"],
-    ["Truth, justice, and hope.", "Man of Steel"],
-    ["I am Iron Man.", "Iron Man"],
-    ["You’ll never walk alone.", "Justice League"],
-    ["I choose to run toward my problems.", "The Flash"],
-    ["Sometimes the world needs hope.", "Superman"],
-    ["I fight for those who cannot.", "Black Panther"],
-    ["I’m always angry.", "Hulk"],
-    ["We save who we can.", "Avengers"],
-    ["I will protect this world.", "Doctor Strange"],
-    ["We don’t trade lives.", "Avengers"],
-    ["A real hero stays.", "Logan"],
-    ["We rise together.", "Justice League"],
-    ["The night is darkest before dawn.", "The Dark Knight"]
+    ["With great power comes responsibility.", "Spider-Man"],
+    ["I can do this all day.", "Captain America"],
+    ["We fight for those who can’t.", "Justice League"],
+    ["The symbol means hope.", "Man of Steel"],
+    ["You are stronger than you think.", "Superman"],
+    ["Heroes rise.", "Justice League"]
   ],
 
   love: [
     ["It was always you.", "The Notebook"],
-    ["You complete me.", "Jerry Maguire"],
-    ["I wish I knew how to quit you.", "Brokeback Mountain"],
+    ["You are my best friend.", "The Notebook"],
+    ["I want all of you, forever.", "The Notebook"],
+    ["I love you. That’s it.", "Before Sunrise"],
     ["To me, you are perfect.", "Love Actually"],
-    ["I love you 3000.", "Avengers"],
-    ["I want all of you.", "The Notebook"],
-    ["You had me at hello.", "Jerry Maguire"],
-    ["I’m just a girl.", "Notting Hill"],
-    ["I choose you.", "Twilight"],
-    ["I fell in love with you.", "Fault in Our Stars"],
-    ["You make me better.", "As Good As It Gets"],
-    ["You are my greatest adventure.", "Up"],
-    ["I’ll never let go.", "Titanic"],
-    ["You’re my home.", "Dear John"],
-    ["Love means never having to say you’re sorry.", "Love Story"],
+    ["You complete me.", "Jerry Maguire"],
     ["I see you.", "Avatar"],
-    ["I belong with you.", "Serendipity"],
+    ["You make me better.", "As Good As It Gets"],
     ["I’d rather be miserable with you.", "Titanic"],
-    ["It’s you.", "Crazy Rich Asians"],
-    ["I love you. That’s it.", "Before Sunrise"]
+    ["You’re my home.", "Dear John"]
   ],
 
   villain: [
     ["Why so serious?", "The Dark Knight"],
-    ["I’m an agent of chaos.", "The Dark Knight"],
+    ["Introduce a little anarchy.", "The Dark Knight"],
     ["Madness is like gravity.", "The Dark Knight"],
-    ["You either die a hero.", "The Dark Knight"],
+    ["I’m an agent of chaos.", "The Dark Knight"],
     ["Smile, it confuses people.", "Joker"],
-    ["I am inevitable.", "Avengers"],
-    ["Power is everything.", "Scarface"],
-    ["You can’t handle the truth.", "A Few Good Men"],
-    ["I’m the bad guy.", "Despicable Me"],
-    ["Fear is power.", "Batman Begins"],
-    ["I like being bad.", "Megamind"],
-    ["I am your father.", "Star Wars"],
-    ["We are venom.", "Venom"],
-    ["The world is cruel.", "Watchmen"],
-    ["Chaos reigns.", "Joker"],
-    ["I win.", "No Country for Old Men"],
-    ["I’m not a monster.", "Joker"],
-    ["You need people like me.", "Scarface"],
-    ["I’m the villain of my own story.", "Joker"],
-    ["Let the games begin.", "Saw"]
+    ["You get what you deserve.", "Joker"],
+    ["I don’t want to kill you.", "Joker"],
+    ["Chaos is fair.", "Joker"],
+    ["Nobody panics when things go according to plan.", "Joker"],
+    ["Let’s put a smile on that face.", "Joker"]
   ]
 };
 
@@ -112,4 +72,32 @@ function showQuote() {
   const q = quotes[currentCategory][index];
   document.getElementById("quote").textContent = `"${q[0]}"`;
   document.getElementById("movie").textContent = `— ${q[1]}`;
+}
+
+function copyQuote() {
+  navigator.clipboard.writeText(
+    document.getElementById("quote").textContent + " " +
+    document.getElementById("movie").textContent
+  );
+  alert("Quote copied!");
+}
+
+function saveQuote() {
+  const saved = JSON.parse(localStorage.getItem("savedQuotes") || "[]");
+  saved.push(document.getElementById("quote").textContent);
+  localStorage.setItem("savedQuotes", JSON.stringify(saved));
+  alert("Saved!");
+}
+
+function shareQuote() {
+  const text =
+    document.getElementById("quote").textContent +
+    " " +
+    document.getElementById("movie").textContent;
+
+  if (navigator.share) {
+    navigator.share({ text });
+  } else {
+    alert("Sharing not supported on this browser.");
+  }
 }
