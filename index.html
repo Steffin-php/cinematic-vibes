@@ -5,40 +5,52 @@
   <title>Cinematic Vibes 🎬</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
 
+<body>
   <div class="overlay"></div>
 
   <div class="container">
-    <h1>Cinematic Vibes 🎬</h1>
-    <p class="tagline">Movie quotes that hit your soul</p>
 
+    <!-- PURPOSE -->
+    <h1>Cinematic Vibes 🎬</h1>
+    <p class="purpose">
+      Daily cinematic quotes for motivation, love, hero & villain vibes
+    </p>
+
+    <!-- CATEGORY BUTTONS -->
+    <div class="categories">
+      <button onclick="changeCategory('motivation')">🎯 Motivation</button>
+      <button onclick="changeCategory('hero')">🦇 Hero</button>
+      <button onclick="changeCategory('love')">❤️ Love</button>
+      <button onclick="changeCategory('villain')">😈 Villain</button>
+    </div>
+
+    <!-- QUOTE BOX -->
     <div class="quote-box">
       <p id="quote">Loading quote...</p>
       <span id="author"></span>
+      <span class="label">🎬 Today’s Cinematic Quote</span>
     </div>
 
-    <div class="buttons">
-      <button onclick="getQuote('motivation')">💪 Motivation</button>
-      <button onclick="getQuote('hero')">🦇 Hero</button>
-      <button onclick="getQuote('love')">❤️ Love</button>
-      <button onclick="getQuote('villain')">😈 Villain</button>
-    </div>
-
+    <!-- ACTIONS -->
     <div class="actions">
+      <button onclick="nextQuote()">➡️ Next Quote</button>
       <button onclick="copyQuote()">📋 Copy</button>
+      <button onclick="saveFavorite()">❤️ Save</button>
       <button onclick="shareQuote()">📤 Share</button>
     </div>
 
+    <!-- FOOTER -->
     <footer>
-      <p>Built with ❤️ by Steffin</p>
-      <p>Movie quotes for inspiration & cinematic vibes</p>
+      Built with ❤️ by Steffin • Clean cinematic inspiration
     </footer>
+
   </div>
 
   <script src="script.js"></script>
 </body>
 </html>
+
