@@ -9,14 +9,17 @@ body {
   height: 100vh;
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   transition: background-image 0.6s ease;
   color: #fff;
 }
 
+/* Dark overlay for readability */
 .overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.68);
+  background: rgba(0,0,0,0.65);
+  z-index: 1;
 }
 
 .container {
@@ -30,7 +33,7 @@ body {
 
 h1 {
   font-size: 2.6rem;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .tagline {
@@ -50,25 +53,25 @@ h1 {
 
 .quote-box {
   margin: 40px auto;
-  padding: 32px;
+  padding: 30px;
   background: rgba(0,0,0,0.6);
   border-radius: 12px;
 }
 
 #quote {
-  font-size: 1.55rem;
+  font-size: 1.5rem;
   line-height: 1.6;
 }
 
 #movie {
-  margin-top: 14px;
+  margin-top: 12px;
   font-size: 1rem;
   opacity: 0.75;
 }
 
 .actions button {
   margin: 8px;
-  padding: 10px 20px;
+  padding: 10px 18px;
   font-size: 1rem;
   border-radius: 6px;
   border: none;
