@@ -1,31 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Cinematic Vibes</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <title>Cinematic Vibes</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="motivation">
 
-<header>
-    <h1>Cinematic Vibes 🎬</h1>
-    <p>Movie quotes that hit your soul</p>
-</header>
+  <div class="overlay"></div>
 
-<nav>
-    <button onclick="showCategory('motivation')">Motivation</button>
-    <button onclick="showCategory('hero')">Hero</button>
-    <button onclick="showCategory('love')">Love</button>
-    <button onclick="showCategory('villain')">Villain</button>
-</nav>
+  <div class="container">
+    <h1>🎬 Cinematic Vibes</h1>
+    <p class="tagline">Daily cinematic quotes for motivation, love & villain vibes</p>
 
-<section id="content">
-    <div class="quote-box" id="quoteBox">
-        Select a category to feel the vibe ✨
+    <div class="buttons">
+      <button onclick="changeCategory('motivation')">🎯 Motivation</button>
+      <button onclick="changeCategory('hero')">🦇 Hero</button>
+      <button onclick="changeCategory('love')">❤️ Love</button>
+      <button onclick="changeCategory('villain')">😈 Villain</button>
     </div>
-</section>
 
-<script src="script.js"></script>
+    <div class="quote-box">
+      <p id="quote">Click a category to begin</p>
+      <span id="movie"></span>
+    </div>
+
+    <button class="next" onclick="nextQuote()">Next Quote</button>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
