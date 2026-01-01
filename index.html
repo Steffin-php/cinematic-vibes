@@ -2,39 +2,41 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cinematic Vibes</title>
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 </head>
-<body class="motivation">
+<body>
 
   <div class="overlay"></div>
 
-  <div class="container">
-    <h1>🎬 Cinematic Vibes</h1>
-    <p class="tagline">
-      Daily cinematic quotes for motivation, love, heroes & villains
-    </p>
+  <header class="hero">
+    <h1>Cinematic Vibes</h1>
+    <p>Discover movies that hit your soul 🎬</p>
+  </header>
 
-    <div class="categories">
-      <button onclick="changeCategory('motivation')">🎯 Motivation</button>
-      <button onclick="changeCategory('hero')">🦸 Hero</button>
-      <button onclick="changeCategory('love')">❤️ Love</button>
-      <button onclick="changeCategory('villain')">😈 Villain</button>
-    </div>
+  <main class="container">
+    <div class="cards">
+      <div class="card">
+        <img src="https://via.placeholder.com/300x450" alt="Movie">
+        <h3>The Dark Knight</h3>
+      </div>
 
-    <div class="quote-box">
-      <p id="quote">Click a category to begin</p>
-      <p id="movie"></p>
-    </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/300x450" alt="Movie">
+        <h3>Interstellar</h3>
+      </div>
 
-    <div class="actions">
-      <button onclick="nextQuote()">➡️ Next Quote</button>
-      <button onclick="copyQuote()">📋 Copy</button>
-      <button onclick="saveQuote()">❤️ Save</button>
-      <button onclick="shareQuote()">📤 Share</button>
+      <div class="card">
+        <img src="https://via.placeholder.com/300x450" alt="Movie">
+        <h3>Inception</h3>
+      </div>
     </div>
-  </div>
+  </main>
+
+  <footer>
+    <p>© 2025 Cinematic Vibes</p>
+  </footer>
 
   <script src="script.js"></script>
 </body>
