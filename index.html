@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>Cinematic Vibes</title>
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body class="motivation">
 
@@ -12,21 +12,28 @@
 
   <div class="container">
     <h1>🎬 Cinematic Vibes</h1>
-    <p class="tagline">Daily cinematic quotes for motivation, love & villain vibes</p>
+    <p class="tagline">
+      Daily cinematic quotes for motivation, love, heroes & villains
+    </p>
 
-    <div class="buttons">
+    <div class="categories">
       <button onclick="changeCategory('motivation')">🎯 Motivation</button>
-      <button onclick="changeCategory('hero')">🦇 Hero</button>
+      <button onclick="changeCategory('hero')">🦸 Hero</button>
       <button onclick="changeCategory('love')">❤️ Love</button>
       <button onclick="changeCategory('villain')">😈 Villain</button>
     </div>
 
     <div class="quote-box">
-      <p id="quote">Click a category to begin</p>
-      <span id="movie"></span>
+      <p id="quote">Choose a category to start</p>
+      <p id="movie"></p>
     </div>
 
-    <button class="next" onclick="nextQuote()">Next Quote</button>
+    <div class="actions">
+      <button onclick="nextQuote()">➡️ Next</button>
+      <button onclick="copyQuote()">📋 Copy</button>
+      <button onclick="saveQuote()">❤️ Save</button>
+      <button onclick="shareQuote()">📤 Share</button>
+    </div>
   </div>
 
   <script src="script.js"></script>
