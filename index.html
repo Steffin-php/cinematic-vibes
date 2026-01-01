@@ -1,56 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Cinematic Vibes 🎬</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>Cinematic Vibes</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
-
 <body>
-  <div class="overlay"></div>
 
-  <div class="container">
-
-    <!-- PURPOSE -->
+<header>
     <h1>Cinematic Vibes 🎬</h1>
-    <p class="purpose">
-      Daily cinematic quotes for motivation, love, hero & villain vibes
-    </p>
+    <p>Movie quotes that hit your soul</p>
+</header>
 
-    <!-- CATEGORY BUTTONS -->
-    <div class="categories">
-      <button onclick="changeCategory('motivation')">🎯 Motivation</button>
-      <button onclick="changeCategory('hero')">🦇 Hero</button>
-      <button onclick="changeCategory('love')">❤️ Love</button>
-      <button onclick="changeCategory('villain')">😈 Villain</button>
+<nav>
+    <button onclick="showCategory('motivation')">Motivation</button>
+    <button onclick="showCategory('hero')">Hero</button>
+    <button onclick="showCategory('love')">Love</button>
+    <button onclick="showCategory('villain')">Villain</button>
+</nav>
+
+<section id="content">
+    <div class="quote-box" id="quoteBox">
+        Select a category to feel the vibe ✨
     </div>
+</section>
 
-    <!-- QUOTE BOX -->
-    <div class="quote-box">
-      <p id="quote">Loading quote...</p>
-      <span id="author"></span>
-      <span class="label">🎬 Today’s Cinematic Quote</span>
-    </div>
-
-    <!-- ACTIONS -->
-    <div class="actions">
-      <button onclick="nextQuote()">➡️ Next Quote</button>
-      <button onclick="copyQuote()">📋 Copy</button>
-      <button onclick="saveFavorite()">❤️ Save</button>
-      <button onclick="shareQuote()">📤 Share</button>
-    </div>
-
-    <!-- FOOTER -->
-    <footer>
-      Built with ❤️ by Steffin • Clean cinematic inspiration
-    </footer>
-
-  </div>
-
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
-
