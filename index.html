@@ -3,36 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cinematic Vibes | Quotes</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Cinematic Vibes</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
-<body id="body-bg">
+<body id="bg-target">
     <div class="overlay"></div>
 
-    <nav class="category-nav">
-        <button class="nav-btn active" onclick="setCategory('love')">Love</button>
-        <button class="nav-btn" onclick="setCategory('hero')">Hero</button>
-        <button class="nav-btn" onclick="setCategory('villain')">Villain</button>
-        <button class="nav-btn" onclick="setCategory('motivation')">Motivation</button>
-    </nav>
+    <div class="nav-container">
+        <button class="nav-btn active" onclick="changeCategory('love')">Love</button>
+        <button class="nav-btn" onclick="changeCategory('hero')">Hero</button>
+        <button class="nav-btn" onclick="changeCategory('villain')">Villain</button>
+        <button class="nav-btn" onclick="changeCategory('motivation')">Motivation</button>
+    </div>
 
-    <div class="container">
-        <div class="quote-card" id="capture">
+    <div class="main-container">
+        <div class="quote-card">
             <i class="fa-solid fa-quote-left quote-icon"></i>
-            <h1 id="quote-text">"Loading the vibe..."</h1>
-            <p id="movie-title">- Movie Name</p>
-            
-            <div class="action-buttons">
-                <button onclick="copyQuote()" title="Copy Text"><i class="fa-regular fa-copy"></i></button>
-                <button onclick="saveQuote()" title="Download Text"><i class="fa-regular fa-floppy-disk"></i></button>
+            <h1 id="quote-text">Loading...</h1>
+            <p id="movie-name">- Movie Title</p>
+
+            <div class="action-bar">
+                <button onclick="copyQuote()" title="Copy Quote"><i class="fa-regular fa-copy"></i></button>
+                <button onclick="saveQuote()" title="Save as Text File"><i class="fa-regular fa-floppy-disk"></i></button>
                 <button onclick="shareQuote()" title="Share"><i class="fa-solid fa-share-nodes"></i></button>
             </div>
         </div>
-        
-        <button id="next-btn" onclick="nextQuote()">Next Quote <i class="fa-solid fa-arrow-right"></i></button>
+
+        <button id="next-quote-btn" onclick="displayQuote()">Next Quote <i class="fa-solid fa-chevron-right"></i></button>
     </div>
 
     <script src="script.js"></script>
