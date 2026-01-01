@@ -1,41 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Cinematic Vibes</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinematic Vibes | Quotes</title>
+    <!-- Google Fonts for a cinematic look -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class="motivation">
+<body>
 
-  <div class="overlay"></div>
+    <!-- Dark overlay to make text readable -->
+    <div class="background-overlay"></div>
 
-  <div class="container">
-    <h1>🎬 Cinematic Vibes</h1>
-    <p class="tagline">
-      Daily cinematic quotes for motivation, love, heroes & villains
-    </p>
-
-    <div class="categories">
-      <button onclick="changeCategory('motivation')">🎯 Motivation</button>
-      <button onclick="changeCategory('hero')">🦸 Hero</button>
-      <button onclick="changeCategory('love')">❤️ Love</button>
-      <button onclick="changeCategory('villain')">😈 Villain</button>
+    <div class="container">
+        <div class="quote-box">
+            <span class="quote-icon">“</span>
+            <p id="quote-text">Loading the magic...</p>
+            <p id="movie-name">- Movie Name</p>
+            
+            <div class="button-group">
+                <button id="next-btn">Next Scene</button>
+            </div>
+        </div>
     </div>
 
-    <div class="quote-box">
-      <p id="quote">Choose a category to start</p>
-      <p id="movie"></p>
-    </div>
-
-    <div class="actions">
-      <button onclick="nextQuote()">➡️ Next</button>
-      <button onclick="copyQuote()">📋 Copy</button>
-      <button onclick="saveQuote()">❤️ Save</button>
-      <button onclick="shareQuote()">📤 Share</button>
-    </div>
-  </div>
-
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
