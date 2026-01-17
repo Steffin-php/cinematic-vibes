@@ -4,25 +4,19 @@
   box-sizing: border-box;
 }
 
-/* BACKGROUND IMAGE */
-.bg {
-  position: fixed;
-  inset: 0;
-  background-image: url("https://images.unsplash.com/photo-1518676590629-3dcbd9c5a5c9");
+/* BACKGROUND WITH DARK OVERLAY */
+body {
+  min-height: 100vh;
+  background-image:
+    linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)),
+    url("https://images.unsplash.com/photo-1489599849927-2ee91cede3ba");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  filter: brightness(0.4);
-  z-index: -1;
 }
 
-/* MAIN APP */
-body {
-  min-height: 100vh;
-  color: white;
-}
-
-.app {
+/* CENTER CONTENT */
+.page {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -33,12 +27,13 @@ body {
 }
 
 /* TITLE */
-.logo {
+.title {
   font-family: 'Bebas Neue', sans-serif;
-  font-size: clamp(2.8rem, 7vw, 4.5rem);
+  font-size: clamp(3rem, 7vw, 4.8rem);
   letter-spacing: 4px;
-  color: #e50914;
+  color: #ffcc00;
   margin-bottom: 30px;
+  text-shadow: 0 4px 15px rgba(0,0,0,0.8);
 }
 
 /* CATEGORY BUTTONS */
@@ -52,33 +47,36 @@ body {
   letter-spacing: 1px;
   background: transparent;
   color: white;
-  border: 2px solid rgba(255,255,255,0.6);
+  border: 2px solid #ffcc00;
   padding: 10px 18px;
   margin: 6px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  border-radius: 6px;
+  transition: 0.3s;
 }
 
 .categories button:hover {
-  background: #e50914;
-  border-color: #e50914;
+  background: #ffcc00;
+  color: black;
 }
 
-/* QUOTE CARD */
-.quote-card {
+/* QUOTE BOX */
+.quote-box {
   max-width: 850px;
-  backdrop-filter: blur(12px);
-  background: rgba(0,0,0,0.45);
-  border-radius: 16px;
-  padding: 30px 28px;
+  padding: 30px;
   margin-bottom: 25px;
-  animation: fadeIn 0.6s ease;
+  background: rgba(0,0,0,0.55);
+  border-left: 5px solid #ffcc00;
+  border-radius: 12px;
 }
 
+/* QUOTE TEXT */
 #quote {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(1.3rem, 3vw, 1.9rem);
+  font-size: clamp(1.4rem, 3vw, 2rem);
   line-height: 1.8;
+  color: white;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.7);
 }
 
 /* ACTION BUTTONS */
@@ -86,28 +84,16 @@ body {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 1rem;
   letter-spacing: 1px;
-  background: #e50914;
+  background: #ffcc00;
+  color: black;
   border: none;
-  color: white;
   padding: 10px 20px;
   margin: 6px;
-  border-radius: 6px;
   cursor: pointer;
-  transition: transform 0.2s ease;
+  border-radius: 6px;
+  transition: 0.3s;
 }
 
 .actions button:hover {
-  transform: scale(1.05);
-}
-
-/* ANIMATION */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(15px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  background: white;
 }
