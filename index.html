@@ -3,25 +3,38 @@
 <head>
   <meta charset="UTF-8">
   <title>Cinematic Vibes</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Playfair+Display:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <div class="overlay">
-    <h1 class="title">🎬 Cinematic Vibes</h1>
+
+    <h1 class="title">Cinematic Vibes</h1>
 
     <div class="buttons">
-      <button onclick="showQuote('love')">❤️ Love</button>
-      <button onclick="showQuote('motivation')">🔥 Motivation</button>
-      <button onclick="showQuote('power')">⚡ Power</button>
-      <button onclick="showQuote('villain')">😈 Villain</button>
+      <button onclick="changeCategory('love')">❤️ Love</button>
+      <button onclick="changeCategory('motivation')">🔥 Motivation</button>
+      <button onclick="changeCategory('power')">⚡ Power</button>
+      <button onclick="changeCategory('villain')">😈 Villain</button>
     </div>
 
     <div class="quote-box">
-      <p id="quote">Click a category to feel the cinema.</p>
+      <p id="quote">Click a category and feel the cinema.</p>
     </div>
+
+    <div class="action-buttons">
+      <button onclick="nextQuote()">➡️ Next</button>
+      <button onclick="copyQuote()">📋 Copy</button>
+      <button onclick="shareQuote()">🔗 Share</button>
+    </div>
+
   </div>
 
   <script src="script.js"></script>
 </body>
 </html>
+
