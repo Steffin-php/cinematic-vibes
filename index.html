@@ -4,15 +4,17 @@
   <meta charset="UTF-8">
   <title>Cinematic Vibes</title>
 
-  <!-- Strong cinematic font -->
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Libre+Baskerville:ital@1&display=swap" rel="stylesheet">
+  <!-- Cinematic Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <div class="container">
-    <h1>CINEMATIC VIBES</h1>
+  <div class="bg"></div>
+
+  <main class="app">
+    <h1 class="logo">CINEMATIC VIBES</h1>
 
     <div class="categories">
       <button onclick="setCategory('love')">LOVE</button>
@@ -21,8 +23,8 @@
       <button onclick="setCategory('dark')">DARK</button>
     </div>
 
-    <div class="quote-box">
-      <p id="quote">Choose a vibe.</p>
+    <div class="quote-card">
+      <p id="quote">Select a vibe and feel the cinema.</p>
     </div>
 
     <div class="actions">
@@ -30,7 +32,7 @@
       <button onclick="copyQuote()">COPY</button>
       <button onclick="shareQuote()">SHARE</button>
     </div>
-  </div>
+  </main>
 
   <script src="script.js"></script>
 </body>
