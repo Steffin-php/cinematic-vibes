@@ -1,35 +1,23 @@
-const API_KEY = 'YOUR_TMDB_API_KEY'; // Get one for free at themoviedb.org
-const BASE_URL = 'https://api.themoviedb.org/3';
-const IMG_URL = 'https://image.tmdb.org/t/p/w500';
+document.addEventListener('mousemove', (e) => {
+    const bg = document.getElementById('bg');
+    
+    // Calculate mouse position relative to center
+    const x = (window.innerWidth / 2 - e.pageX) / 40;
+    const y = (window.innerHeight / 2 - e.pageY) / 40;
 
-const movieGrid = document.getElementById('movieGrid');
+    // Apply smooth parallax shift to the background image
+    bg.style.transform = `translate(${x}px, ${y}px) scale(1.05)`;
+});
 
-// 1. Fetch Trending Movies
-async function getMovies() {
-    try {
-        const res = await fetch(`${BASE_URL}/trending/movie/week?api_key=${API_KEY}`);
-        const data = await res.json();
-        displayMovies(data.results);
-    } catch (error) {
-        console.error("Error fetching movies:", error);
-    }
-}
-
-// 2. Display Movies in Grid
-function displayMovies(movies) {
-    movieGrid.innerHTML = '';
-    movies.forEach(movie => {
-        const movieEl = document.createElement('div');
-        movieEl.classList.add('movie-card');
-        movieEl.innerHTML = `
-            <img src="${IMG_URL + movie.poster_path}" alt="${movie.title}">
-            <div class="movie-info">
-                <h3>${movie.title}</h3>
-                <span>⭐ ${movie.vote_average}</span>
-            </div>
-        `;
-        movieGrid.appendChild(movieEl);
-    });
-}
-
-getMovies();
+// Simple reveal animation on load
+window.addEventListener('DOMContentLoaded', () => {
+    const heroContent = document.querySelector('.hero-content');
+    heroContent.style.opacity = '0';
+    heroContent.style.transform = 'translateY(30px)';
+    
+    setTimeout(() => {
+        heroContent.style.transition = 'all 1s ease-out';
+        heroContent.style.opacity = '1';
+        heroContent.style.transform = 'translateY(0)';
+    }, 300);
+});
