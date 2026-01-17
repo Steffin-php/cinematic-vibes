@@ -1,28 +1,41 @@
-<!-- Main Container -->
-<div class="app-container">
-    <!-- Glassmorphism Navbar -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinematic Vibes | Premium</title>
+    <!-- Modern Cinematic Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Advanced Parallax Background -->
+    <div class="parallax-bg" id="bg"></div>
+    <div class="overlay"></div>
+
     <nav class="navbar">
         <div class="logo">CINEMATIC<span>VIBES</span></div>
-        <div class="search-box">
-            <input type="text" id="movieSearch" placeholder="Search movies...">
-            <i class="fas fa-search"></i>
-        </div>
+        <ul class="nav-links">
+            <li><a href="#">Movies</a></li>
+            <li><a href="#">Series</a></li>
+            <li><a href="#" class="active">Trending</a></li>
+        </ul>
     </nav>
 
-    <!-- Immersive Hero Section -->
-    <header class="hero" id="hero">
+    <section class="hero">
         <div class="hero-content">
-            <h1 id="heroTitle">Featured Masterpiece</h1>
-            <p id="heroDesc">Experience the art of storytelling through the lens of visionary directors.</p>
-            <button class="btn-play"><i class="fas fa-play"></i> Watch Trailer</button>
+            <h4 class="eyebrow">NOW STREAMING</h4>
+            <h1 class="glitch-text">VISIONS OF NOIR</h1>
+            <p>Explore a curated collection of cinematic masterpieces with breathtaking visuals and soul-stirring narratives.</p>
+            
+            <div class="btn-container">
+                <button class="btn-primary"><span>WATCH TRAILER</span></button>
+                <button class="btn-secondary">BROWSE LIST</button>
+            </div>
         </div>
-    </header>
+    </section>
 
-    <!-- Movie Grid Section -->
-    <main class="content">
-        <h2>Trending Now</h2>
-        <div class="movie-grid" id="movieGrid">
-            <!-- Movies will be injected here via JS -->
-        </div>
-    </main>
-</div>
+    <script src="script.js"></script>
+</body>
+</html>
