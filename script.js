@@ -1,55 +1,64 @@
-let currentCategory = "";
+let category = "";
 let index = 0;
 
-const data = {
+const quotes = {
   love: [
     "You had me at hello. – Jerry Maguire",
     "To me, you are perfect. – Love Actually",
-    "Love means never having to say you're sorry. – Love Story",
-    "I wish I knew how to quit you. – Brokeback Mountain",
-    "The best love is the kind that awakens the soul. – The Notebook"
+    "The greatest thing you’ll ever learn is just to love and be loved.",
+    "Love is passion, obsession, someone you can’t live without.",
+    "I wish I knew how to quit you."
   ],
 
   motivation: [
-    "Get busy living, or get busy dying. – Shawshank Redemption",
-    "Why do we fall? So we can learn to pick ourselves up. – Batman Begins",
+    "Get busy living, or get busy dying.",
+    "Why do we fall? So we can learn to pick ourselves up.",
     "Hope is a good thing, maybe the best of things.",
-    "Don’t let anyone tell you what you can’t do.",
-    "Great things never come from comfort zones."
+    "Don’t ever let somebody tell you you can’t do something.",
+    "Great things take time."
   ],
 
   power: [
-    "With great power comes great responsibility. – Spider-Man",
-    "I am inevitable. – Avengers",
-    "A king without power is no king at all.",
-    "You merely adopted the dark. I was born in it.",
-    "Great men are not born great, they grow great."
+    "With great power comes great responsibility.",
+    "I am inevitable.",
+    "Great men are not born great, they grow great.",
+    "Power resides where men believe it resides.",
+    "The world bends to those who stand tall."
   ],
 
   dark: [
-    "Sometimes the truth isn't good enough.",
+    "Sometimes the truth isn’t good enough.",
     "Chaos is order yet undeciphered.",
-    "The world is cruel, and the only morality is power.",
-    "Every villain is a hero in his own story.",
-    "Darkness is not evil; it is honest."
+    "Every villain is the hero of his own story.",
+    "Darkness is honesty without mercy.",
+    "Fear is the sharpest weapon."
   ]
 };
 
 function setCategory(cat) {
-  currentCategory = cat;
+  category = cat;
   index = 0;
-  document.getElementById("quote").innerText = data[cat][index];
+  updateQuote();
 }
 
 function nextQuote() {
-  if (!currentCategory) return;
-  index = (index + 1) % data[currentCategory].length;
-  document.getElementById("quote").innerText = data[currentCategory][index];
+  if (!category) return;
+  index = (index + 1) % quotes[category].length;
+  updateQuote();
+}
+
+function updateQuote() {
+  const el = document.getElementById("quote");
+  el.style.opacity = 0;
+  setTimeout(() => {
+    el.innerText = quotes[category][index];
+    el.style.opacity = 1;
+  }, 200);
 }
 
 function copyQuote() {
   navigator.clipboard.writeText(document.getElementById("quote").innerText);
-  alert("Copied!");
+  alert("Quote copied!");
 }
 
 function shareQuote() {
@@ -57,8 +66,6 @@ function shareQuote() {
   if (navigator.share) {
     navigator.share({ title: "Cinematic Vibes", text });
   } else {
-    alert("Share not supported on this device.");
+    alert("Sharing not supported");
   }
 }
-
-
