@@ -1,94 +1,225 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cinematic Vibes | Premium</title>
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <!-- Your CSS file -->
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-    <nav class="navbar" id="navbar">
-        <div class="logo">CINEMATIC<span>VIBES</span></div>
-        <div class="search-container">
-            <i class="fas fa-search"></i>
-            <input type="text" placeholder="Search masterpiece...">
-        </div>
-        <div class="nav-extra">
-            <button class="icon-btn"><i class="fas fa-bell"></i></button>
-            <div class="profile-pic"></div>
-        </div>
-    </nav>
-
-    <header class="hero">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <span class="trending-tag">#1 IN MOVIES TODAY</span>
-            <h1>VISIONS OF <br>MODERN NOIR</h1>
-            <p>A deep dive into the aesthetic of shadows, high-contrast storytelling, and the evolution of cinematic atmosphere.</p>
-            <div class="hero-btns">
-                <button class="btn-play"><i class="fas fa-play"></i> Play</button>
-                <button class="btn-info"><i class="fas fa-circle-info"></i> More Info</button>
-            </div>
-        </div>
-    </header>
-
-    <section class="movie-section">
-        <h2 class="section-title">Trending Now</h2>
-        <div class="movie-grid">
-            <!-- Card 1 -->
-            <div class="movie-card">
-                <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=500" alt="Poster">
-                <div class="card-overlay">
-                    <div class="play-icon"><i class="fas fa-play"></i></div>
-                    <div class="card-details">
-                        <h4>Interstellar Space</h4>
-                        <div class="meta"><span>9.8 Rating</span> <span>HD</span></div>
-                    </div>
-                </div>
-            </div>
-            <!-- Card 2 -->
-            <div class="movie-card">
-                <img src="https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?q=80&w=500" alt="Poster">
-                <div class="card-overlay">
-                    <div class="play-icon"><i class="fas fa-play"></i></div>
-                    <div class="card-details">
-                        <h4>Cyber Evolution</h4>
-                        <div class="meta"><span>8.5 Rating</span> <span>4K</span></div>
-                    </div>
-                </div>
-            </div>
-            <!-- Card 3 -->
-            <div class="movie-card">
-                <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?q=80&w=500" alt="Poster">
-                <div class="card-overlay">
-                    <div class="play-icon"><i class="fas fa-play"></i></div>
-                    <div class="card-details">
-                        <h4>The Director</h4>
-                        <div class="meta"><span>9.2 Rating</span> <span>HDR</span></div>
-                    </div>
-                </div>
-            </div>
-            <!-- Card 4 -->
-            <div class="movie-card">
-                <img src="https://images.unsplash.com/photo-1542204172-3c1f11c0c4a7?q=80&w=500" alt="Poster">
-                <div class="card-overlay">
-                    <div class="play-icon"><i class="fas fa-play"></i></div>
-                    <div class="card-details">
-                        <h4>Desert Mirage</h4>
-                        <div class="meta"><span>8.1 Rating</span> <span>HD</span></div>
-                    </div>
+<section class="movie-section">
+    <h2 class="section-title">Trending Now</h2>
+    <div class="movie-grid">
+        <!-- 1. The Shawshank Redemption -->
+        <div class="movie-card">
+            <img src="https://image.tmdb.org/t/p/w500/q6y0Go1tsYTVHTgnPROU3h9C9uP.jpg" alt="Poster">
+            <div class="card-overlay">
+                <div class="play-icon"><i class="fas fa-play"></i></div>
+                <div class="card-details">
+                    <h4>The Shawshank Redemption</h4>
+                    <div class="meta"><span>⭐ 9.3</span> <span>4K</span></div>
                 </div>
             </div>
         </div>
-    </section>
-
-    <script src="script.js"></script>
-</body>
-</html>
+        <!-- 2. The Godfather -->
+        <div class="movie-card">
+            <img src="https://image.tmdb.org/t/p/w500/3bhkrjOiERoSTq9L9v9LsbT9Z30.jpg" alt="Poster">
+            <div class="card-overlay">
+                <div class="play-icon"><i class="fas fa-play"></i></div>
+                <div class="card-details">
+                    <h4>The Godfather</h4>
+                    <div class="meta"><span>⭐ 9.2</span> <span>Ultra HD</span></div>
+                </div>
+            </div>
+        </div>
+        <!-- 3. The Dark Knight -->
+        <div class="movie-card">
+            <img src="https://image.tmdb.org/t/p/w500/qJ2tW6WMUDp9QmSbmM9zLqGZpXW.jpg" alt="Poster">
+            <div class="card-overlay">
+                <div class="play-icon"><i class="fas fa-play"></i></div>
+                <div class="card-details">
+                    <h4>The Dark Knight</h4>
+                    <div class="meta"><span>⭐ 9.0</span> <span>4K</span></div>
+                </div>
+            </div>
+        </div>
+        <!-- 4. Schindler's List -->
+        <div class="movie-card">
+            <img src="https://image.tmdb.org/t/p/w500/sF1U4EU7S0Y3we2O0AsCqaov0wh.jpg" alt="Poster">
+            <div class="card-overlay">
+                <div class="play-icon"><i class="fas fa-play"></i></div>
+                <div class="card-details">
+                    <h4>Schindler's List</h4>
+                    <div class="meta"><span>⭐ 9.0</span> <span>HDR</span></div>
+                </div>
+            </div>
+        </div>
+        <!-- 5. Pulp Fiction -->
+        <div class="movie-card">
+            <img src="https://image.tmdb.org/t/p/w500/d5iIl9h9btztp90Y0YhXzK0I319.jpg" alt="Poster">
+            <div class="card-overlay">
+                <div class="play-icon"><i class="fas fa-play"></i></div>
+                <div class="card-details">
+                    <h4>Pulp Fiction</h4>
+                    <div class="meta"><span>⭐ 8.9</span> <span>Full HD</span></div>
+                </div>
+            </div>
+        </div>
+        <!-- 6. Inception -->
+        <div class="movie-card">
+            <img src="https://image.tmdb.org/t/p/w500/edv5CZvjR79UPO0Ox1YVkp8p1S3.jpg" alt="Poster">
+            <div class="card-overlay">
+                <div class="play-icon"><i class="fas fa-play"></i></div>
+                <div class="card-details">
+                    <h4>Inception</h4>
+                    <div class="meta"><span>⭐ 8.8</span> <span>4K</span></div>
+                </div>
+            </div>
+        </div>
+        <!-- 7. Interstellar -->
+        <div class="movie-card">
+            <img src="https://image.tmdb.org/t/p/w500/gEU2QniE6E77NI6lCU6MxlSaba7.jpg" alt="Poster">
+            <div class="card-overlay">
+                <div class="play-icon"><i class="fas fa-play"></i></div>
+                <div class="card-details">
+                    <h4>Interstellar</h4>
+                    <div class="meta"><span>⭐ 8.7</span> <span>IMAX</span></div>
+                </div>
+            </div>
+        </div>
+        <!-- 8. Parasite -->
+        <div class="movie-card">
+            <img src="https://image.tmdb.org/t/p/w500/7IiTTjS3vS7YpYnHeDExyLDgUuY.jpg" alt="Poster">
+            <div class="card-overlay">
+                <div class="play-icon"><i class="fas fa-play"></i></div>
+                <div class="card-details">
+                    <h4>Parasite</h4>
+                    <div class="meta"><span>⭐ 8.5</span> <span>4K</span></div>
+                </div>
+            </div>
+        </div>
+        <!-- 9. Dune: Part Two -->
+        <div class="movie-card">
+            <img src="https://image.tmdb.org/t/p/w500/czembS0RhiERbtNR7T5nGPvbuTP.jpg" alt="Poster">
+            <div class="card-overlay">
+                <div class="play-icon"><i class="fas fa-play"></i></div>
+                <div class="card-details">
+                    <h4>Dune: Part Two</h4>
+                    <div class="meta"><span>⭐ 8.6</span> <span>IMAX</span></div>
+                </div>
+            </div>
+        </div>
+        <!-- 10. Oppenheimer -->
+        <div class="movie-card">
+            <img src="https://image.tmdb.org/t/p/w500/8GxvynZ3mtjZpTgmxcYpZhpR7o9.jpg" alt="Poster">
+            <div class="card-overlay">
+                <div class="play-icon"><i class="fas fa-play"></i></div>
+                <div class="card-details">
+                    <h4>Oppenheimer</h4>
+                    <div class="meta"><span>⭐ 8.3</span> <span>70mm</span></div>
+                </div>
+            </div>
+        </div>
+        <!-- 11. Spider-Man: Into the Spider-Verse -->
+        <div class="movie-card">
+            <img src="https://image.tmdb.org/t/p/w500/iiZZ92hlsnB8s2bi4ZsSqP3v7zn.jpg" alt="Poster">
+            <div class="card-overlay">
+                <div class="play-icon"><i class="fas fa-play"></i></div>
+                <div class="card-details">
+                    <h4>Across the Spider-Verse</h4>
+                    <div class="meta"><span>⭐ 8.6</span> <span>HD</span></div>
+                </div>
+            </div>
+        </div>
+        <!-- 12. Spirited Away -->
+        <div class="movie-card">
+            <img src="https://image.tmdb.org/t/p/w500/39wmItS6Sq40vA6Im9fvE3pT9xz.jpg" alt="Poster">
+            <div class="card-overlay">
+                <div class="play-icon"><i class="fas fa-play"></i></div>
+                <div class="card-details">
+                    <h4>Spirited Away</h4>
+                    <div class="meta"><span>⭐ 8.6</span> <span>Classic</span></div>
+                </div>
+            </div>
+        </div>
+        <!-- 13. Gladiator -->
+        <div class="movie-card">
+            <img src="https://image.tmdb.org/t/p/w500/ty8TGRvS21o96Znk13ZklyhCfwW.jpg" alt="Poster">
+            <div class="card-overlay">
+                <div class="play-icon"><i class="fas fa-play"></i></div>
+                <div class="card-details">
+                    <h4>Gladiator</h4>
+                    <div class="meta"><span>⭐ 8.5</span> <span>4K</span></div>
+                </div>
+            </div>
+        </div>
+        <!-- 14. Whiplash -->
+        <div class="movie-card">
+            <img src="https://image.tmdb.org/t/p/w500/7u3U97tAFKiP33oypkRiHc7u2p.jpg" alt="Poster">
+            <div class="card-overlay">
+                <div class="play-icon"><i class="fas fa-play"></i></div>
+                <div class="card-details">
+                    <h4>Whiplash</h4>
+                    <div class="meta"><span>⭐ 8.5</span> <span>Full HD</span></div>
+                </div>
+            </div>
+        </div>
+        <!-- 15. The Matrix -->
+        <div class="movie-card">
+            <img src="https://image.tmdb.org/t/p/w500/f89U3Y9S7qwbkYp7CUBEq87CjM2.jpg" alt="Poster">
+            <div class="card-overlay">
+                <div class="play-icon"><i class="fas fa-play"></i></div>
+                <div class="card-details">
+                    <h4>The Matrix</h4>
+                    <div class="meta"><span>⭐ 8.7</span> <span>Remastered</span></div>
+                </div>
+            </div>
+        </div>
+        <!-- 16. Fight Club -->
+        <div class="movie-card">
+            <img src="https://image.tmdb.org/t/p/w500/pB8BM7pdSp6B6rB0LpS9S6H0BhJ.jpg" alt="Poster">
+            <div class="card-overlay">
+                <div class="play-icon"><i class="fas fa-play"></i></div>
+                <div class="card-details">
+                    <h4>Fight Club</h4>
+                    <div class="meta"><span>⭐ 8.8</span> <span>Ultra HD</span></div>
+                </div>
+            </div>
+        </div>
+        <!-- 17. Joker -->
+        <div class="movie-card">
+            <img src="https://image.tmdb.org/t/p/w500/udDclsvNsR9STI0fSafeT3vc9tm.jpg" alt="Poster">
+            <div class="card-overlay">
+                <div class="play-icon"><i class="fas fa-play"></i></div>
+                <div class="card-details">
+                    <h4>Joker</h4>
+                    <div class="meta"><span>⭐ 8.4</span> <span>4K</span></div>
+                </div>
+            </div>
+        </div>
+        <!-- 18. The Prestige -->
+        <div class="movie-card">
+            <img src="https://image.tmdb.org/t/p/w500/bdN3g9er99Y86S0O4D999vO9idZ.jpg" alt="Poster">
+            <div class="card-overlay">
+                <div class="play-icon"><i class="fas fa-play"></i></div>
+                <div class="card-details">
+                    <h4>The Prestige</h4>
+                    <div class="meta"><span>⭐ 8.5</span> <span>4K</span></div>
+                </div>
+            </div>
+        </div>
+        <!-- 19. Avengers: Endgame -->
+        <div class="movie-card">
+            <img src="https://image.tmdb.org/t/p/w500/or06vS3ST0PgpqqoXgGZrnCZs9d.jpg" alt="Poster">
+            <div class="card-overlay">
+                <div class="play-icon"><i class="fas fa-play"></i></div>
+                <div class="card-details">
+                    <h4>Avengers: Endgame</h4>
+                    <div class="meta"><span>⭐ 8.4</span> <span>IMAX</span></div>
+                </div>
+            </div>
+        </div>
+        <!-- 20. Forrest Gump -->
+        <div class="movie-card">
+            <img src="https://image.tmdb.org/t/p/w500/arw2vcBveWOVZr6pxm9H6vub2tL.jpg" alt="Poster">
+            <div class="card-overlay">
+                <div class="play-icon"><i class="fas fa-play"></i></div>
+                <div class="card-details">
+                    <h4>Forrest Gump</h4>
+                    <div class="meta"><span>⭐ 8.8</span> <span>Classic</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
