@@ -3,83 +3,151 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cinematic Vibes | Red Noir</title>
-    <!-- Cinematic Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <title>CINEMATIC VIBES | RED & BLACK</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <style>
+        /* CSS INSIDE HTML TO FORCE THE CHANGE */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #000000 !important; /* FORCED BLACK */
+            color: #ff0000 !important; /* FORCED RED FONTS */
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+        }
+
+        .logo {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 4rem;
+            padding: 20px;
+            border-bottom: 3px solid #ff0000;
+            margin-bottom: 40px;
+        }
+
+        .logo span {
+            color: white;
+        }
+
+        .section-title {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 3.5rem;
+            margin: 40px 0;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+        }
+
+        .movie-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 20px;
+            padding: 0 5%;
+            margin-bottom: 80px;
+        }
+
+        .movie-card {
+            background: #000;
+            padding: 10px;
+            border: 1px solid #ff0000;
+            transition: 0.3s;
+        }
+
+        .movie-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px #ff0000;
+        }
+
+        .movie-card img {
+            width: 100%;
+            height: auto;
+            border-bottom: 1px solid #ff0000;
+            display: block;
+        }
+
+        .movie-card h3 {
+            font-size: 1.2rem;
+            margin: 15px 0 5px 0;
+            font-family: 'Bebas Neue', cursive;
+        }
+
+        .movie-card p {
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        /* MOBILE FIX */
+        @media (max-width: 800px) {
+            .movie-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
 </head>
 <body>
 
-    <nav class="navbar">
-        <div class="logo">CINEMATIC<span>VIBES</span></div>
-    </nav>
+    <div class="logo">CINEMATIC<span>VIBES</span></div>
 
-    <div class="container">
-        <!-- MOVIES SECTION -->
-        <section class="movie-section">
-            <h2 class="section-title">TOP MOVIES</h2>
-            <div class="movie-grid">
-                <div class="movie-card">
-                    <img src="https://www.themoviedb.org/t/p/w500/qJ2tW6WMUDp9QmSbmM9zLqGZpXW.jpg" alt="Dark Knight">
-                    <h3>THE DARK KNIGHT</h3>
-                    <p>Rating: 9.0</p>
-                </div>
-                <div class="movie-card">
-                    <img src="https://www.themoviedb.org/t/p/w500/gEU2QniE6E77NI6lCU6MxlSaba7.jpg" alt="Interstellar">
-                    <h3>INTERSTELLAR</h3>
-                    <p>Rating: 8.7</p>
-                </div>
-                <div class="movie-card">
-                    <img src="https://www.themoviedb.org/t/p/w500/edv5CZvjR79UPO0Ox1YVkp8p1S3.jpg" alt="Inception">
-                    <h3>INCEPTION</h3>
-                    <p>Rating: 8.8</p>
-                </div>
-                <div class="movie-card">
-                    <img src="https://www.themoviedb.org/t/p/w500/d5iIl9h9btztp90Y0YhXzK0I319.jpg" alt="Pulp Fiction">
-                    <h3>PULP FICTION</h3>
-                    <p>Rating: 8.9</p>
-                </div>
-                <div class="movie-card">
-                    <img src="https://www.themoviedb.org/t/p/w500/q6y0Go1tsYTVHTgnPROU3h9C9uP.jpg" alt="Shawshank">
-                    <h3>SHAWSHANK REDEMPTION</h3>
-                    <p>Rating: 9.3</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- SERIES SECTION -->
-        <section class="movie-section">
-            <h2 class="section-title">TOP SERIES</h2>
-            <div class="movie-grid">
-                <div class="movie-card">
-                    <img src="https://www.themoviedb.org/t/p/w500/ggm8bbub6o97v0t7FEy0qC96v99.jpg" alt="Breaking Bad">
-                    <h3>BREAKING BAD</h3>
-                    <p>Rating: 9.5</p>
-                </div>
-                <div class="movie-card">
-                    <img src="https://www.themoviedb.org/t/p/w500/7WsyChvRStvT0tO0ZwrKyNqLE3W.jpg" alt="GOT">
-                    <h3>GAME OF THRONES</h3>
-                    <p>Rating: 9.2</p>
-                </div>
-                <div class="movie-card">
-                    <img src="https://www.themoviedb.org/t/p/w500/49Wf9S1Cqzq0R3Y9G9dg9696zFS.jpg" alt="Stranger Things">
-                    <h3>STRANGER THINGS</h3>
-                    <p>Rating: 8.7</p>
-                </div>
-                <div class="movie-card">
-                    <img src="https://www.themoviedb.org/t/p/w500/hlLtx2p29uaLZBAsYIsBovp6gyx.jpg" alt="Chernobyl">
-                    <h3>CHERNOBYL</h3>
-                    <p>Rating: 9.4</p>
-                </div>
-                <div class="movie-card">
-                    <img src="https://www.themoviedb.org/t/p/w500/77vY3btQ8v6u6Uv6vPzZ4VwYvN4.jpg" alt="The Boys">
-                    <h3>THE BOYS</h3>
-                    <p>Rating: 8.7</p>
-                </div>
-            </div>
-        </section>
+    <!-- FILMS SECTION -->
+    <h2 class="section-title">TOP FILMS</h2>
+    <div class="movie-grid">
+        <div class="movie-card">
+            <img src="https://image.tmdb.org/t/p/w500/qJ2tW6WMUDp9QmSbmM9zLqGZpXW.jpg" alt="Dark Knight">
+            <h3>THE DARK KNIGHT</h3>
+            <p>RATING: 9.0</p>
+        </div>
+        <div class="movie-card">
+            <img src="https://image.tmdb.org/t/p/w500/gEU2QniE6E77NI6lCU6MxlSaba7.jpg" alt="Interstellar">
+            <h3>INTERSTELLAR</h3>
+            <p>RATING: 8.7</p>
+        </div>
+        <div class="movie-card">
+            <img src="https://image.tmdb.org/t/p/w500/edv5CZvjR79UPO0Ox1YVkp8p1S3.jpg" alt="Inception">
+            <h3>INCEPTION</h3>
+            <p>RATING: 8.8</p>
+        </div>
+        <div class="movie-card">
+            <img src="https://image.tmdb.org/t/p/w500/d5iIl9h9btztp90Y0YhXzK0I319.jpg" alt="Pulp Fiction">
+            <h3>PULP FICTION</h3>
+            <p>RATING: 8.9</p>
+        </div>
+        <div class="movie-card">
+            <img src="https://image.tmdb.org/t/p/w500/q6y0Go1tsYTVHTgnPROU3h9C9uP.jpg" alt="Shawshank">
+            <h3>SHAWSHANK REDEMPTION</h3>
+            <p>RATING: 9.3</p>
+        </div>
     </div>
 
-    <script src="script.js"></script>
-</body>
-</html>
+    <!-- SERIES SECTION -->
+    <h2 class="section-title">TOP SERIES</h2>
+    <div class="movie-grid">
+        <div class="movie-card">
+            <img src="https://image.tmdb.org/t/p/w500/ggm8bbub6o97v0t7FEy0qC96v99.jpg" alt="Breaking Bad">
+            <h3>BREAKING BAD</h3>
+            <p>RATING: 9.5</p>
+        </div>
+        <div class="movie-card">
+            <img src="https://image.tmdb.org/t/p/w500/7WsyChvRStvT0tO0ZwrKyNqLE3W.jpg" alt="GOT">
+            <h3>GAME OF THRONES</h3>
+            <p>RATING: 9.2</p>
+        </div>
+        <div class="movie-card">
+            <img src="https://image.tmdb.org/t/p/w500/49Wf9S1Cqzq0R3Y9G9dg9696zFS.jpg" alt="Stranger Things">
+            <h3>STRANGER THINGS</h3>
+            <p>RATING: 8.7</p>
+        </div>
+        <div class="movie-card">
+            <img src="https://image.tmdb.org/t/p/w500/hlLtx2p29uaLZBAsYIsBovp6gyx.jpg" alt="Chernobyl">
+            <h3>CHERNOBYL</h3>
+            <p>RATING: 9.4</p>
+        </div>
+        <div class="movie-card">
+            <img src="https://image.tmdb.org/t/p/w500/77vY3btQ8v6u6Uv6vPzZ4VwYvN4.jpg" alt="The Boys">
+            <h3>THE BOYS</h3>
+            <p>RATING: 8.7</p>
+        </div>
+    </div>
+
+</
