@@ -1,23 +1,31 @@
-document.addEventListener('mousemove', (e) => {
-    const bg = document.getElementById('bg');
-    
-    // Calculate mouse position relative to center
-    const x = (window.innerWidth / 2 - e.pageX) / 40;
-    const y = (window.innerHeight / 2 - e.pageY) / 40;
-
-    // Apply smooth parallax shift to the background image
-    bg.style.transform = `translate(${x}px, ${y}px) scale(1.05)`;
+// 1. Navbar Scroll Effect
+window.addEventListener('scroll', () => {
+    const navbar = document.getElementById('navbar');
+    if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
 });
 
-// Simple reveal animation on load
-window.addEventListener('DOMContentLoaded', () => {
+// 2. Simple Entrance Animation
+document.addEventListener('DOMContentLoaded', () => {
     const heroContent = document.querySelector('.hero-content');
     heroContent.style.opacity = '0';
-    heroContent.style.transform = 'translateY(30px)';
+    heroContent.style.transform = 'translateY(20px)';
     
     setTimeout(() => {
         heroContent.style.transition = 'all 1s ease-out';
         heroContent.style.opacity = '1';
         heroContent.style.transform = 'translateY(0)';
-    }, 300);
+    }, 200);
+});
+
+// 3. Search Bar Interaction
+const searchInput = document.querySelector('.search-bar input');
+searchInput.addEventListener('focus', () => {
+    searchInput.parentElement.style.borderColor = '#e50914';
+});
+searchInput.addEventListener('blur', () => {
+    searchInput.parentElement.style.borderColor = 'rgba(255,255,255,0.1)';
 });
