@@ -1,4 +1,4 @@
-let category = "";
+let currentCategory = "";
 let index = 0;
 
 const quotes = {
@@ -23,7 +23,7 @@ const quotes = {
     "I am inevitable.",
     "Great men are not born great, they grow great.",
     "Power resides where men believe it resides.",
-    "The world bends to those who stand tall."
+    "Stand tall and the world will bend."
   ],
 
   dark: [
@@ -35,37 +35,38 @@ const quotes = {
   ]
 };
 
-function setCategory(cat) {
-  category = cat;
+function setCategory(category) {
+  currentCategory = category;
   index = 0;
   updateQuote();
 }
 
 function nextQuote() {
-  if (!category) return;
-  index = (index + 1) % quotes[category].length;
+  if (!currentCategory) return;
+  index = (index + 1) % quotes[currentCategory].length;
   updateQuote();
 }
 
 function updateQuote() {
-  const el = document.getElementById("quote");
-  el.style.opacity = 0;
-  setTimeout(() => {
-    el.innerText = quotes[category][index];
-    el.style.opacity = 1;
-  }, 200);
+  document.getElementById("quote").innerText =
+    quotes[currentCategory][index];
 }
 
 function copyQuote() {
-  navigator.clipboard.writeText(document.getElementById("quote").innerText);
+  navigator.clipboard.writeText(
+    document.getElementById("quote").innerText
+  );
   alert("Quote copied!");
 }
 
 function shareQuote() {
   const text = document.getElementById("quote").innerText;
   if (navigator.share) {
-    navigator.share({ title: "Cinematic Vibes", text });
+    navigator.share({
+      title: "Cinematic Vibes",
+      text: text
+    });
   } else {
-    alert("Sharing not supported");
+    alert("Sharing not supported on this device.");
   }
 }
