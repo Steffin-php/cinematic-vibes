@@ -1,72 +1,64 @@
 let currentCategory = "";
-let currentIndex = 0;
+let index = 0;
 
-const quotes = {
+const data = {
   love: [
     "You had me at hello. – Jerry Maguire",
-    "Love is passion, obsession, someone you can’t live without. – Meet Joe Black",
-    "The greatest thing you’ll ever learn is just to love and be loved. – Moulin Rouge",
+    "To me, you are perfect. – Love Actually",
+    "Love means never having to say you're sorry. – Love Story",
     "I wish I knew how to quit you. – Brokeback Mountain",
-    "To me, you are perfect. – Love Actually"
+    "The best love is the kind that awakens the soul. – The Notebook"
   ],
 
   motivation: [
     "Get busy living, or get busy dying. – Shawshank Redemption",
-    "Don’t ever let somebody tell you you can’t do something. – Pursuit of Happyness",
     "Why do we fall? So we can learn to pick ourselves up. – Batman Begins",
-    "Hope is a good thing, maybe the best of things. – Shawshank Redemption",
-    "Your time is limited, so don’t waste it living someone else’s life."
+    "Hope is a good thing, maybe the best of things.",
+    "Don’t let anyone tell you what you can’t do.",
+    "Great things never come from comfort zones."
   ],
 
   power: [
     "With great power comes great responsibility. – Spider-Man",
-    "I am inevitable. – Avengers: Endgame",
-    "A man who doesn’t stand for something will fall for anything.",
-    "You merely adopted the dark. I was born in it. – The Dark Knight Rises",
-    "Great men are not born great, they grow great. – The Godfather"
+    "I am inevitable. – Avengers",
+    "A king without power is no king at all.",
+    "You merely adopted the dark. I was born in it.",
+    "Great men are not born great, they grow great."
   ],
 
-  villain: [
-    "You either die a hero or live long enough to see yourself become the villain. – The Dark Knight",
-    "Why so serious? – Joker",
-    "Chaos isn’t a pit. Chaos is a ladder.",
-    "I don’t want to rule the world. I just want my half. – Dr. Evil",
-    "Sometimes the truth isn’t good enough, sometimes people deserve more. – Joker"
+  dark: [
+    "Sometimes the truth isn't good enough.",
+    "Chaos is order yet undeciphered.",
+    "The world is cruel, and the only morality is power.",
+    "Every villain is a hero in his own story.",
+    "Darkness is not evil; it is honest."
   ]
 };
 
-function changeCategory(category) {
-  currentCategory = category;
-  currentIndex = 0;
-  document.getElementById("quote").innerText = quotes[category][currentIndex];
+function setCategory(cat) {
+  currentCategory = cat;
+  index = 0;
+  document.getElementById("quote").innerText = data[cat][index];
 }
 
 function nextQuote() {
   if (!currentCategory) return;
-
-  currentIndex++;
-  if (currentIndex >= quotes[currentCategory].length) {
-    currentIndex = 0;
-  }
-  document.getElementById("quote").innerText =
-    quotes[currentCategory][currentIndex];
+  index = (index + 1) % data[currentCategory].length;
+  document.getElementById("quote").innerText = data[currentCategory][index];
 }
 
 function copyQuote() {
-  const text = document.getElementById("quote").innerText;
-  navigator.clipboard.writeText(text);
-  alert("Quote copied!");
+  navigator.clipboard.writeText(document.getElementById("quote").innerText);
+  alert("Copied!");
 }
 
 function shareQuote() {
   const text = document.getElementById("quote").innerText;
   if (navigator.share) {
-    navigator.share({
-      title: "Cinematic Vibes",
-      text: text
-    });
+    navigator.share({ title: "Cinematic Vibes", text });
   } else {
-    alert("Sharing not supported on this device.");
+    alert("Share not supported on this device.");
   }
 }
+
 
