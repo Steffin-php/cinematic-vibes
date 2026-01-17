@@ -3,303 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cinematic Vibes | Premium</title>
+    <title>Cinematic Vibes | Premium Streaming</title>
     
-    <!-- Premium Fonts & Icons -->
+    <!-- External Fonts & Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
-    <style>
-        /* --- ADVANCED CSS --- */
-        :root {
-            --primary-red: #e50914;
-            --gold-accent: #ffb400;
-            --dark-bg: #0a0a0b;
-            --card-bg: rgba(255, 255, 255, 0.05);
-            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            background-color: var(--dark-bg);
-            color: #ffffff;
-            font-family: 'Poppins', sans-serif;
-            overflow-x: hidden;
-            line-height: 1.6;
-        }
-
-        /* Hero Background with Immersive Image */
-        .hero {
-            position: relative;
-            height: 100vh;
-            width: 100%;
-            display: flex;
-            align-items: center;
-            padding: 0 8%;
-            background: linear-gradient(to right, rgba(0,0,0,0.9) 20%, rgba(0,0,0,0.1) 100%), 
-                        url('https://images.unsplash.com/photo-1478720568477-152d9b164e26?q=80&w=2070&auto=format&fit=crop'); /* High-end Cinematic Image */
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-        }
-
-        /* Advanced Navbar */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            padding: 25px 8%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 1000;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.8), transparent);
-            backdrop-filter: blur(5px);
-        }
-
-        .logo {
-            font-family: 'Bebas Neue', cursive;
-            font-size: 2.5rem;
-            letter-spacing: 2px;
-            color: white;
-            text-decoration: none;
-        }
-
-        .logo span { color: var(--primary-red); }
-
-        .search-container {
-            position: relative;
-            width: 300px;
-        }
-
-        .search-container input {
-            width: 100%;
-            padding: 10px 20px;
-            padding-left: 45px;
-            background: rgba(255,255,255,0.1);
-            border: 1px solid rgba(255,255,255,0.2);
-            border-radius: 50px;
-            color: white;
-            outline: none;
-            transition: var(--transition);
-        }
-
-        .search-container i {
-            position: absolute;
-            left: 15px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: rgba(255,255,255,0.5);
-        }
-
-        .search-container input:focus {
-            background: rgba(255,255,255,0.2);
-            border-color: var(--primary-red);
-            width: 350px;
-        }
-
-        /* Hero Content */
-        .hero-content {
-            max-width: 700px;
-            z-index: 2;
-        }
-
-        .hero-content h4 {
-            color: var(--gold-accent);
-            letter-spacing: 4px;
-            font-weight: 600;
-            margin-bottom: 10px;
-            font-size: 0.9rem;
-        }
-
-        .hero-content h1 {
-            font-family: 'Bebas Neue', cursive;
-            font-size: 5.5rem;
-            line-height: 1;
-            margin-bottom: 20px;
-            text-shadow: 2px 4px 10px rgba(0,0,0,0.5);
-        }
-
-        .hero-content p {
-            font-size: 1.1rem;
-            color: rgba(255,255,255,0.7);
-            margin-bottom: 35px;
-            max-width: 500px;
-        }
-
-        /* Advanced Liquid Glow Buttons */
-        .btn-group { display: flex; gap: 20px; }
-
-        .btn {
-            padding: 15px 35px;
-            border-radius: 5px;
-            font-weight: 600;
-            text-transform: uppercase;
-            cursor: pointer;
-            transition: var(--transition);
-            border: none;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 0.9rem;
-        }
-
-        .btn-play {
-            background: var(--primary-red);
-            color: white;
-        }
-
-        .btn-play:hover {
-            background: #ff0000;
-            box-shadow: 0 0 25px rgba(229, 9, 20, 0.5);
-            transform: translateY(-3px);
-        }
-
-        .btn-outline {
-            background: rgba(255,255,255,0.1);
-            color: white;
-            border: 1px solid rgba(255,255,255,0.3);
-            backdrop-filter: blur(10px);
-        }
-
-        .btn-outline:hover {
-            background: white;
-            color: black;
-            transform: translateY(-3px);
-        }
-
-        /* Trending Section */
-        .trending {
-            padding: 80px 8%;
-            background: var(--dark-bg);
-        }
-
-        .section-title {
-            font-family: 'Bebas Neue', cursive;
-            font-size: 2.5rem;
-            margin-bottom: 30px;
-            letter-spacing: 1px;
-        }
-
-        .movie-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 25px;
-        }
-
-        .movie-card {
-            background: var(--card-bg);
-            border-radius: 10px;
-            overflow: hidden;
-            transition: var(--transition);
-            cursor: pointer;
-            position: relative;
-        }
-
-        .movie-card:hover {
-            transform: scale(1.05) translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.5);
-        }
-
-        .movie-card img {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-        }
-
-        .movie-card-info {
-            padding: 15px;
-        }
-
-        .movie-card-info h3 {
-            font-size: 1rem;
-            margin-bottom: 5px;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-        .rating {
-            color: var(--gold-accent);
-            font-size: 0.8rem;
-        }
-
-    </style>
+    
+    <!-- Link to CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <nav>
+    <nav id="navbar">
         <a href="#" class="logo">CINEMATIC<span>VIBES</span></a>
-        <div class="search-container">
-            <i class="fas fa-search"></i>
-            <input type="text" placeholder="Search for movies, actors...">
+        <div class="nav-right">
+            <div class="search-bar">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search movies...">
+            </div>
+            <button class="menu-btn"><i class="fas fa-bars"></i></button>
         </div>
     </nav>
 
     <header class="hero">
+        <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h4>DIRECTOR'S CUT</h4>
-            <h1>FEATURED MASTERPIECE</h1>
-            <p>Experience the art of storytelling through the lens of visionary directors. A journey into the depths of human emotion and visual splendor.</p>
-            <div class="btn-group">
-                <button class="btn btn-play"><i class="fas fa-play"></i> Watch Trailer</button>
-                <button class="btn btn-outline"><i class="fas fa-plus"></i> Add to List</button>
+            <h4 class="badge">NEW RELEASE</h4>
+            <h1>THE ART OF <br><span>CINEMATOGRAPHY</span></h1>
+            <p>Dive into a curated world of visual storytelling. From noir classics to modern masterpieces, experience cinema like never before.</p>
+            <div class="btn-container">
+                <button class="btn btn-main">
+                    <i class="fas fa-play"></i> PLAY NOW
+                </button>
+                <button class="btn btn-glass">
+                    <i class="fas fa-info-circle"></i> DETAILS
+                </button>
             </div>
         </div>
     </header>
 
-    <section class="trending">
-        <h2 class="section-title">Trending Now</h2>
-        <div class="movie-grid">
-            <!-- These are placeholders. In the next step, you'd use JS to fetch real images -->
-            <div class="movie-card">
-                <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=1925&auto=format&fit=crop" alt="Movie">
-                <div class="movie-card-info">
-                    <h3>The Midnight Sky</h3>
-                    <div class="rating"><i class="fas fa-star"></i> 8.4</div>
-                </div>
-            </div>
-            <div class="movie-card">
-                <img src="https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?q=80&w=2070&auto=format&fit=crop" alt="Movie">
-                <div class="movie-card-info">
-                    <h3>Cyber Evolution</h3>
-                    <div class="rating"><i class="fas fa-star"></i> 7.9</div>
-                </div>
-            </div>
-            <div class="movie-card">
-                <img src="https://images.unsplash.com/photo-1440404653325-ab127d49abc1?q=80&w=2070&auto=format&fit=crop" alt="Movie">
-                <div class="movie-card-info">
-                    <h3>Golden Era</h3>
-                    <div class="rating"><i class="fas fa-star"></i> 9.1</div>
-                </div>
-            </div>
-             <div class="movie-card">
-                <img src="https://images.unsplash.com/photo-1542204172-3c1f11c0c4a7?q=80&w=1974&auto=format&fit=crop" alt="Movie">
-                <div class="movie-card-info">
-                    <h3>Last Journey</h3>
-                    <div class="rating"><i class="fas fa-star"></i> 8.2</div>
-                </div>
-            </div>
+    <main class="container">
+        <div class="section-header">
+            <h2>Trending Now</h2>
+            <a href="#">View All <i class="fas fa-chevron-right"></i></a>
         </div>
-    </section>
-
-    <script>
-        // Smooth fade-in effect on scroll
-        window.addEventListener('scroll', () => {
-            const nav = document.querySelector('nav');
-            if (window.scrollY > 50) {
-                nav.style.background = 'rgba(10, 10, 11, 0.95)';
-                nav.style.padding = '15px 8%';
-            } else {
-                nav.style.background = 'linear-gradient(to bottom, rgba(0,0,0,0.8), transparent)';
-                nav.style.padding = '25px 8%';
-            }
-        });
-    </script>
-</body>
-</html>
+        
+        <div class="movie-grid">
+            <!-- Movie 1 -->
+            <div class="movie-card">
+                <div class="card-img">
+                    <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=500" alt="Movie">
+                    <div class="rating">8.9</div>
+                </div>
