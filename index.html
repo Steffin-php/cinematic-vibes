@@ -1,39 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Cinematic Vibes</title>
+<!-- Main Container -->
+<div class="app-container">
+    <!-- Glassmorphism Navbar -->
+    <nav class="navbar">
+        <div class="logo">CINEMATIC<span>VIBES</span></div>
+        <div class="search-box">
+            <input type="text" id="movieSearch" placeholder="Search movies...">
+            <i class="fas fa-search"></i>
+        </div>
+    </nav>
 
-  <!-- Cinematic Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+    <!-- Immersive Hero Section -->
+    <header class="hero" id="hero">
+        <div class="hero-content">
+            <h1 id="heroTitle">Featured Masterpiece</h1>
+            <p id="heroDesc">Experience the art of storytelling through the lens of visionary directors.</p>
+            <button class="btn-play"><i class="fas fa-play"></i> Watch Trailer</button>
+        </div>
+    </header>
 
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-  <div class="page">
-
-    <h1 class="title">CINEMATIC VIBES</h1>
-
-    <div class="categories">
-      <button onclick="setCategory('love')">LOVE</button>
-      <button onclick="setCategory('motivation')">MOTIVATION</button>
-      <button onclick="setCategory('power')">POWER</button>
-      <button onclick="setCategory('dark')">DARK</button>
-    </div>
-
-    <div class="quote-box">
-      <p id="quote">Choose a vibe and feel the cinema.</p>
-    </div>
-
-    <div class="actions">
-      <button onclick="nextQuote()">NEXT</button>
-      <button onclick="copyQuote()">COPY</button>
-      <button onclick="shareQuote()">SHARE</button>
-    </div>
-
-  </div>
-
-  <script src="script.js"></script>
-</body>
-</html>
+    <!-- Movie Grid Section -->
+    <main class="content">
+        <h2>Trending Now</h2>
+        <div class="movie-grid" id="movieGrid">
+            <!-- Movies will be injected here via JS -->
+        </div>
+    </main>
+</div>
