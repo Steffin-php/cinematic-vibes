@@ -4,78 +4,110 @@
   box-sizing: border-box;
 }
 
-/* MOVIE BACKGROUND */
-body {
-  min-height: 100vh;
-  background-image: url("https://images.unsplash.com/photo-1517602302552-471fe67acf66");
+/* BACKGROUND IMAGE */
+.bg {
+  position: fixed;
+  inset: 0;
+  background-image: url("https://images.unsplash.com/photo-1518676590629-3dcbd9c5a5c9");
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
-  font-family: 'Anton', sans-serif;
+  background-repeat: no-repeat;
+  filter: brightness(0.4);
+  z-index: -1;
 }
 
-/* DARK OVERLAY */
-.container {
+/* MAIN APP */
+body {
   min-height: 100vh;
-  background: rgba(0,0,0,0.85);
   color: white;
+}
+
+.app {
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  padding: 20px;
+  align-items: center;
   text-align: center;
+  padding: 20px;
 }
 
 /* TITLE */
-h1 {
+.logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(2.8rem, 7vw, 4.5rem);
+  letter-spacing: 4px;
   color: #e50914;
-  letter-spacing: 3px;
-  font-size: clamp(2.2rem, 6vw, 3.5rem);
   margin-bottom: 30px;
 }
 
 /* CATEGORY BUTTONS */
+.categories {
+  margin-bottom: 25px;
+}
+
 .categories button {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1rem;
+  letter-spacing: 1px;
   background: transparent;
-  border: 2px solid #e50914;
   color: white;
+  border: 2px solid rgba(255,255,255,0.6);
   padding: 10px 18px;
   margin: 6px;
-  font-size: clamp(0.8rem, 2.5vw, 1rem);
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .categories button:hover {
   background: #e50914;
+  border-color: #e50914;
 }
 
-/* QUOTE BOX */
-.quote-box {
-  max-width: 800px;
-  margin: 30px 0;
-  padding: 25px;
-  border-left: 4px solid #e50914;
+/* QUOTE CARD */
+.quote-card {
+  max-width: 850px;
+  backdrop-filter: blur(12px);
+  background: rgba(0,0,0,0.45);
+  border-radius: 16px;
+  padding: 30px 28px;
+  margin-bottom: 25px;
+  animation: fadeIn 0.6s ease;
 }
 
 #quote {
-  font-family: 'Libre Baskerville', serif;
-  font-size: clamp(1.1rem, 3vw, 1.7rem);
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.3rem, 3vw, 1.9rem);
   line-height: 1.8;
 }
 
 /* ACTION BUTTONS */
 .actions button {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1rem;
+  letter-spacing: 1px;
   background: #e50914;
   border: none;
   color: white;
-  padding: 10px 16px;
+  padding: 10px 20px;
   margin: 6px;
-  font-size: clamp(0.8rem, 2.5vw, 1rem);
+  border-radius: 6px;
   cursor: pointer;
+  transition: transform 0.2s ease;
 }
 
 .actions button:hover {
-  background: white;
-  color: black;
+  transform: scale(1.05);
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
