@@ -3,55 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cinematic Vibes | Premium Streaming</title>
+    <title>Cinematic Vibes | Premium</title>
     
-    <!-- External Fonts & Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
-    <!-- Link to CSS -->
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Your CSS file -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <nav id="navbar">
-        <a href="#" class="logo">CINEMATIC<span>VIBES</span></a>
-        <div class="nav-right">
-            <div class="search-bar">
-                <i class="fas fa-search"></i>
-                <input type="text" placeholder="Search movies...">
-            </div>
-            <button class="menu-btn"><i class="fas fa-bars"></i></button>
+    <nav class="navbar" id="navbar">
+        <div class="logo">CINEMATIC<span>VIBES</span></div>
+        <div class="search-container">
+            <i class="fas fa-search"></i>
+            <input type="text" placeholder="Search masterpiece...">
+        </div>
+        <div class="nav-extra">
+            <button class="icon-btn"><i class="fas fa-bell"></i></button>
+            <div class="profile-pic"></div>
         </div>
     </nav>
 
     <header class="hero">
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h4 class="badge">NEW RELEASE</h4>
-            <h1>THE ART OF <br><span>CINEMATOGRAPHY</span></h1>
-            <p>Dive into a curated world of visual storytelling. From noir classics to modern masterpieces, experience cinema like never before.</p>
-            <div class="btn-container">
-                <button class="btn btn-main">
-                    <i class="fas fa-play"></i> PLAY NOW
-                </button>
-                <button class="btn btn-glass">
-                    <i class="fas fa-info-circle"></i> DETAILS
-                </button>
+            <span class="trending-tag">#1 IN MOVIES TODAY</span>
+            <h1>VISIONS OF <br>MODERN NOIR</h1>
+            <p>A deep dive into the aesthetic of shadows, high-contrast storytelling, and the evolution of cinematic atmosphere.</p>
+            <div class="hero-btns">
+                <button class="btn-play"><i class="fas fa-play"></i> Play</button>
+                <button class="btn-info"><i class="fas fa-circle-info"></i> More Info</button>
             </div>
         </div>
     </header>
 
-    <main class="container">
-        <div class="section-header">
-            <h2>Trending Now</h2>
-            <a href="#">View All <i class="fas fa-chevron-right"></i></a>
-        </div>
-        
+    <section class="movie-section">
+        <h2 class="section-title">Trending Now</h2>
         <div class="movie-grid">
-            <!-- Movie 1 -->
+            <!-- Card 1 -->
             <div class="movie-card">
-                <div class="card-img">
-                    <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=500" alt="Movie">
-                    <div class="rating">8.9</div>
+                <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=500" alt="Poster">
+                <div class="card-overlay">
+                    <div class="play-icon"><i class="fas fa-play"></i></div>
+                    <div class="card-details">
+                        <h4>Interstellar Space</h4>
+                        <div class="meta"><span>9.8 Rating</span> <span>HD</span></div>
+                    </div>
                 </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="movie-card">
+                <img src="https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?q=80&w=500" alt="Poster">
+                <div class="card-overlay">
+                    <div class="play-icon"><i class="fas fa-play"></i></div>
+                    <div class="card-details">
+                        <h4>Cyber Evolution</h4>
+                        <div class="meta"><span>8.5 Rating</span> <span>4K</span></div>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 3 -->
+            <div class="movie-card">
+                <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?q=80&w=500" alt="Poster">
+                <div class="card-overlay">
+                    <div class="play-icon"><i class="fas fa-play"></i></div>
+                    <div class="card-details">
+                        <h4>The Director</h4>
+                        <div class="meta"><span>9.2 Rating</span> <span>HDR</span></div>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 4 -->
+            <div class="movie-card">
+                <img src="https://images.unsplash.com/photo-1542204172-3c1f11c0c4a7?q=80&w=500" alt="Poster">
+                <div class="card-overlay">
+                    <div class="play-icon"><i class="fas fa-play"></i></div>
+                    <div class="card-details">
+                        <h4>Desert Mirage</h4>
+                        <div class="meta"><span>8.1 Rating</span> <span>HD</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
