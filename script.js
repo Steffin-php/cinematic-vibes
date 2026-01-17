@@ -1,72 +1,35 @@
-let currentCategory = "";
-let index = 0;
+const API_KEY = 'YOUR_TMDB_API_KEY'; // Get one for free at themoviedb.org
+const BASE_URL = 'https://api.themoviedb.org/3';
+const IMG_URL = 'https://image.tmdb.org/t/p/w500';
 
-const quotes = {
-  love: [
-    "You had me at hello. – Jerry Maguire",
-    "To me, you are perfect. – Love Actually",
-    "The greatest thing you’ll ever learn is just to love and be loved.",
-    "Love is passion, obsession, someone you can’t live without.",
-    "I wish I knew how to quit you."
-  ],
+const movieGrid = document.getElementById('movieGrid');
 
-  motivation: [
-    "Get busy living, or get busy dying.",
-    "Why do we fall? So we can learn to pick ourselves up.",
-    "Hope is a good thing, maybe the best of things.",
-    "Don’t ever let somebody tell you you can’t do something.",
-    "Great things take time."
-  ],
-
-  power: [
-    "With great power comes great responsibility.",
-    "I am inevitable.",
-    "Great men are not born great, they grow great.",
-    "Power resides where men believe it resides.",
-    "Stand tall and the world will bend."
-  ],
-
-  dark: [
-    "Sometimes the truth isn’t good enough.",
-    "Chaos is order yet undeciphered.",
-    "Every villain is the hero of his own story.",
-    "Darkness is honesty without mercy.",
-    "Fear is the sharpest weapon."
-  ]
-};
-
-function setCategory(category) {
-  currentCategory = category;
-  index = 0;
-  updateQuote();
+// 1. Fetch Trending Movies
+async function getMovies() {
+    try {
+        const res = await fetch(`${BASE_URL}/trending/movie/week?api_key=${API_KEY}`);
+        const data = await res.json();
+        displayMovies(data.results);
+    } catch (error) {
+        console.error("Error fetching movies:", error);
+    }
 }
 
-function nextQuote() {
-  if (!currentCategory) return;
-  index = (index + 1) % quotes[currentCategory].length;
-  updateQuote();
-}
-
-function updateQuote() {
-  document.getElementById("quote").innerText =
-    quotes[currentCategory][index];
-}
-
-function copyQuote() {
-  navigator.clipboard.writeText(
-    document.getElementById("quote").innerText
-  );
-  alert("Quote copied!");
-}
-
-function shareQuote() {
-  const text = document.getElementById("quote").innerText;
-  if (navigator.share) {
-    navigator.share({
-      title: "Cinematic Vibes",
-      text: text
+// 2. Display Movies in Grid
+function displayMovies(movies) {
+    movieGrid.innerHTML = '';
+    movies.forEach(movie => {
+        const movieEl = document.createElement('div');
+        movieEl.classList.add('movie-card');
+        movieEl.innerHTML = `
+            <img src="${IMG_URL + movie.poster_path}" alt="${movie.title}">
+            <div class="movie-info">
+                <h3>${movie.title}</h3>
+                <span>⭐ ${movie.vote_average}</span>
+            </div>
+        `;
+        movieGrid.appendChild(movieEl);
     });
-  } else {
-    alert("Sharing not supported on this device.");
-  }
 }
+
+getMovies();
